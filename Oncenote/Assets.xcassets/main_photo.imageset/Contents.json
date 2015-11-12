@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "navi_setting@2x副本副本.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "main_photo@2x.png",
       "scale" : "2x"
     },
     {

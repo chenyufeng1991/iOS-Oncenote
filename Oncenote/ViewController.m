@@ -133,15 +133,6 @@
   
 }
 
-// fixed font style. use custom view (UILabel) if you want something different
-//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//  
-//  return @"这是头部";
-//}
-
-
-
-
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -173,10 +164,17 @@
   UIImageView *arrowIcon = [[UIImageView alloc] initWithFrame:CGRectMake(tableView.bounds.size.width - 30, 10, 30, 30)];
   [arrowIcon setImage:[UIImage imageNamed:@"tableview_arrow.png"]];
   
+  
+  //在Header底部绘制一条线；
+  UIView *drawLine = [[UIView alloc] initWithFrame:CGRectMake(0, 49, tableView.bounds.size.width, 1)];
+  drawLine.backgroundColor = [UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1];
+  
+  
   [view addSubview:noteIcon];
   [view addSubview:noteLabel];
   [view addSubview:totalLabel];
   [view addSubview:arrowIcon];
+  [view addSubview:drawLine];
   
   //增加Header的点击事件；
   [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteHeaderPressed:)]];

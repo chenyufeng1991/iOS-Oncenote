@@ -6,9 +6,22 @@
 //  Copyright © 2015年 chenyufengweb. All rights reserved.
 //
 
+
+/*
+ 界面的背景灰色：[UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1]
+ 主色调绿色：[UIColor colorWithRed:0 green:0.6 blue:0.26 alpha:1]
+ 
+ 
+ */
+
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *noteTableView;//“笔记”的TableView
+
+
+@property(nonatomic,strong) NSArray *noteArray;
 
 @end
 
@@ -18,6 +31,9 @@
   [super viewDidLoad];
   
   [self setNavigationBarItemButton];
+  
+  //添加数据
+  self.noteArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
   
   
 }
@@ -90,6 +106,85 @@
   [self presentViewController:alert animated:true completion:nil];
   
 }
+
+- (void)noteHeaderPressed:(id)sender{
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"这是TableView头部" preferredStyle:  UIAlertControllerStyleAlert];
+  [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //点击按钮的响应事件；
+  }]];
+  
+  [self presentViewController:alert animated:true completion:nil];
+  
+}
+
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+  
+  return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
+  cell.textLabel.text = [self.noteArray objectAtIndex:indexPath.row];
+  return cell;
+  
+}
+
+// fixed font style. use custom view (UILabel) if you want something different
+//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//  
+//  return @"这是头部";
+//}
+
+
+
+
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+  return 50;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+  return 50;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width , 50)];
+  
+  //需要在Header底部加一条细线，用来分隔第一个cell；默认Header和第一个cell之间是没有分隔线的；
+  
+  UIImageView *noteIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
+  [noteIcon setImage:[UIImage imageNamed:@"tableview_note.png"]];
+  
+  UILabel *noteLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 10, 50, 30)];
+  noteLabel.text = @"笔记";
+  noteLabel.textColor = [UIColor colorWithRed:0 green:0.6 blue:0.26 alpha:1];
+  
+  UILabel *totalLabel = [[UILabel alloc] initWithFrame:CGRectMake(tableView.bounds.size.width - 60, 10, 50, 30)];
+  totalLabel.text = @"全部";
+  totalLabel.textColor = [UIColor colorWithRed:0 green:0.6 blue:0.26 alpha:1];
+  totalLabel.font = [UIFont systemFontOfSize:12];
+  
+  UIImageView *arrowIcon = [[UIImageView alloc] initWithFrame:CGRectMake(tableView.bounds.size.width - 30, 10, 30, 30)];
+  [arrowIcon setImage:[UIImage imageNamed:@"tableview_arrow.png"]];
+  
+  [view addSubview:noteIcon];
+  [view addSubview:noteLabel];
+  [view addSubview:totalLabel];
+  [view addSubview:arrowIcon];
+  
+  //增加Header的点击事件；
+  [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteHeaderPressed:)]];
+  
+  return view;
+  
+}
+
 @end
 
 

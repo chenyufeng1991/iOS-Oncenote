@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		717902EA1BF48FC100428756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902E91BF48FC100428756 /* main.m */; };
+		717902ED1BF48FC100428756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EC1BF48FC100428756 /* AppDelegate.m */; };
+		717902F01BF48FC100428756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EF1BF48FC100428756 /* ViewController.m */; };
+		717902F31BF48FC100428756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717902F11BF48FC100428756 /* Main.storyboard */; };
+		717902F51BF48FC100428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717902F41BF48FC100428756 /* Assets.xcassets */; };
+		717902F81BF48FC100428756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717902F61BF48FC100428756 /* LaunchScreen.storyboard */; };
+		717903031BF48FC200428756 /* OncenoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903021BF48FC200428756 /* OncenoteTests.m */; };
+		7179030E1BF48FC200428756 /* OncenoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179030D1BF48FC200428756 /* OncenoteUITests.m */; };
+		717903131BF48FC200428756 /* Oncenote WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 717903121BF48FC200428756 /* Oncenote WatchKit App.app */; };
+		717903191BF48FC200428756 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717903171BF48FC200428756 /* Interface.storyboard */; };
+		7179031B1BF48FC200428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7179031A1BF48FC200428756 /* Assets.xcassets */; };
+		717903221BF48FC200428756 /* Oncenote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 717903211BF48FC200428756 /* Oncenote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7179032A1BF48FC200428756 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903291BF48FC200428756 /* InterfaceController.m */; };
+		7179032D1BF48FC200428756 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179032C1BF48FC200428756 /* ExtensionDelegate.m */; };
+		717903301BF48FC200428756 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179032F1BF48FC200428756 /* NotificationController.m */; };
+		717903331BF48FC200428756 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903321BF48FC200428756 /* GlanceController.m */; };
+		717903351BF48FC200428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717903341BF48FC200428756 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		717902FF1BF48FC200428756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 717902DD1BF48FC100428756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 717902E41BF48FC100428756;
+			remoteInfo = Oncenote;
+		};
+		7179030A1BF48FC200428756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 717902DD1BF48FC100428756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 717902E41BF48FC100428756;
+			remoteInfo = Oncenote;
+		};
+		717903141BF48FC200428756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 717902DD1BF48FC100428756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 717903111BF48FC200428756;
+			remoteInfo = "Oncenote WatchKit App";
+		};
+		717903231BF48FC200428756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 717902DD1BF48FC100428756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 717903201BF48FC200428756;
+			remoteInfo = "Oncenote WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7179033C1BF48FC200428756 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				717903221BF48FC200428756 /* Oncenote WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717903401BF48FC200428756 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				717903131BF48FC200428756 /* Oncenote WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		717902E51BF48FC100428756 /* Oncenote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oncenote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		717902E91BF48FC100428756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		717902EB1BF48FC100428756 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		717902EC1BF48FC100428756 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		717902EE1BF48FC100428756 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		717902EF1BF48FC100428756 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		717902F21BF48FC100428756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		717902F41BF48FC100428756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		717902F71BF48FC100428756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		717902F91BF48FC100428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717902FE1BF48FC200428756 /* OncenoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OncenoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		717903021BF48FC200428756 /* OncenoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OncenoteTests.m; sourceTree = "<group>"; };
+		717903041BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717903091BF48FC200428756 /* OncenoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OncenoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7179030D1BF48FC200428756 /* OncenoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OncenoteUITests.m; sourceTree = "<group>"; };
+		7179030F1BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717903121BF48FC200428756 /* Oncenote WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oncenote WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717903181BF48FC200428756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7179031A1BF48FC200428756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7179031C1BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717903211BF48FC200428756 /* Oncenote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Oncenote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717903271BF48FC200428756 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		717903281BF48FC200428756 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		717903291BF48FC200428756 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		7179032B1BF48FC200428756 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		7179032C1BF48FC200428756 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		7179032E1BF48FC200428756 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		7179032F1BF48FC200428756 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		717903311BF48FC200428756 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		717903321BF48FC200428756 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		717903341BF48FC200428756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		717903361BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		717902E21BF48FC100428756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717902FB1BF48FC200428756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717903061BF48FC200428756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7179031E1BF48FC200428756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		717902DC1BF48FC100428756 = {
+			isa = PBXGroup;
+			children = (
+				717902E71BF48FC100428756 /* Oncenote */,
+				717903011BF48FC200428756 /* OncenoteTests */,
+				7179030C1BF48FC200428756 /* OncenoteUITests */,
+				717903161BF48FC200428756 /* Oncenote WatchKit App */,
+				717903251BF48FC200428756 /* Oncenote WatchKit Extension */,
+				717902E61BF48FC100428756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		717902E61BF48FC100428756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				717902E51BF48FC100428756 /* Oncenote.app */,
+				717902FE1BF48FC200428756 /* OncenoteTests.xctest */,
+				717903091BF48FC200428756 /* OncenoteUITests.xctest */,
+				717903121BF48FC200428756 /* Oncenote WatchKit App.app */,
+				717903211BF48FC200428756 /* Oncenote WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		717902E71BF48FC100428756 /* Oncenote */ = {
+			isa = PBXGroup;
+			children = (
+				717902EB1BF48FC100428756 /* AppDelegate.h */,
+				717902EC1BF48FC100428756 /* AppDelegate.m */,
+				717902EE1BF48FC100428756 /* ViewController.h */,
+				717902EF1BF48FC100428756 /* ViewController.m */,
+				717902F11BF48FC100428756 /* Main.storyboard */,
+				717902F41BF48FC100428756 /* Assets.xcassets */,
+				717902F61BF48FC100428756 /* LaunchScreen.storyboard */,
+				717902F91BF48FC100428756 /* Info.plist */,
+				717902E81BF48FC100428756 /* Supporting Files */,
+			);
+			path = Oncenote;
+			sourceTree = "<group>";
+		};
+		717902E81BF48FC100428756 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				717902E91BF48FC100428756 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		717903011BF48FC200428756 /* OncenoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				717903021BF48FC200428756 /* OncenoteTests.m */,
+				717903041BF48FC200428756 /* Info.plist */,
+			);
+			path = OncenoteTests;
+			sourceTree = "<group>";
+		};
+		7179030C1BF48FC200428756 /* OncenoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7179030D1BF48FC200428756 /* OncenoteUITests.m */,
+				7179030F1BF48FC200428756 /* Info.plist */,
+			);
+			path = OncenoteUITests;
+			sourceTree = "<group>";
+		};
+		717903161BF48FC200428756 /* Oncenote WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				717903171BF48FC200428756 /* Interface.storyboard */,
+				7179031A1BF48FC200428756 /* Assets.xcassets */,
+				7179031C1BF48FC200428756 /* Info.plist */,
+			);
+			path = "Oncenote WatchKit App";
+			sourceTree = "<group>";
+		};
+		717903251BF48FC200428756 /* Oncenote WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				717903281BF48FC200428756 /* InterfaceController.h */,
+				717903291BF48FC200428756 /* InterfaceController.m */,
+				7179032B1BF48FC200428756 /* ExtensionDelegate.h */,
+				7179032C1BF48FC200428756 /* ExtensionDelegate.m */,
+				7179032E1BF48FC200428756 /* NotificationController.h */,
+				7179032F1BF48FC200428756 /* NotificationController.m */,
+				717903311BF48FC200428756 /* GlanceController.h */,
+				717903321BF48FC200428756 /* GlanceController.m */,
+				717903341BF48FC200428756 /* Assets.xcassets */,
+				717903361BF48FC200428756 /* Info.plist */,
+				717903261BF48FC200428756 /* Supporting Files */,
+			);
+			path = "Oncenote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		717903261BF48FC200428756 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				717903271BF48FC200428756 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		717902E41BF48FC100428756 /* Oncenote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717903411BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote" */;
+			buildPhases = (
+				717902E11BF48FC100428756 /* Sources */,
+				717902E21BF48FC100428756 /* Frameworks */,
+				717902E31BF48FC100428756 /* Resources */,
+				717903401BF48FC200428756 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				717903151BF48FC200428756 /* PBXTargetDependency */,
+			);
+			name = Oncenote;
+			productName = Oncenote;
+			productReference = 717902E51BF48FC100428756 /* Oncenote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		717902FD1BF48FC200428756 /* OncenoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717903441BF48FC200428756 /* Build configuration list for PBXNativeTarget "OncenoteTests" */;
+			buildPhases = (
+				717902FA1BF48FC200428756 /* Sources */,
+				717902FB1BF48FC200428756 /* Frameworks */,
+				717902FC1BF48FC200428756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				717903001BF48FC200428756 /* PBXTargetDependency */,
+			);
+			name = OncenoteTests;
+			productName = OncenoteTests;
+			productReference = 717902FE1BF48FC200428756 /* OncenoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		717903081BF48FC200428756 /* OncenoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717903471BF48FC200428756 /* Build configuration list for PBXNativeTarget "OncenoteUITests" */;
+			buildPhases = (
+				717903051BF48FC200428756 /* Sources */,
+				717903061BF48FC200428756 /* Frameworks */,
+				717903071BF48FC200428756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7179030B1BF48FC200428756 /* PBXTargetDependency */,
+			);
+			name = OncenoteUITests;
+			productName = OncenoteUITests;
+			productReference = 717903091BF48FC200428756 /* OncenoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		717903111BF48FC200428756 /* Oncenote WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7179033D1BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote WatchKit App" */;
+			buildPhases = (
+				717903101BF48FC200428756 /* Resources */,
+				7179033C1BF48FC200428756 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				717903241BF48FC200428756 /* PBXTargetDependency */,
+			);
+			name = "Oncenote WatchKit App";
+			productName = "Oncenote WatchKit App";
+			productReference = 717903121BF48FC200428756 /* Oncenote WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		717903201BF48FC200428756 /* Oncenote WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717903391BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote WatchKit Extension" */;
+			buildPhases = (
+				7179031D1BF48FC200428756 /* Sources */,
+				7179031E1BF48FC200428756 /* Frameworks */,
+				7179031F1BF48FC200428756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Oncenote WatchKit Extension";
+			productName = "Oncenote WatchKit Extension";
+			productReference = 717903211BF48FC200428756 /* Oncenote WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		717902DD1BF48FC100428756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = chenyufengweb;
+				TargetAttributes = {
+					717902E41BF48FC100428756 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FA2863D27N;
+					};
+					717902FD1BF48FC200428756 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FA2863D27N;
+						TestTargetID = 717902E41BF48FC100428756;
+					};
+					717903081BF48FC200428756 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FA2863D27N;
+						TestTargetID = 717902E41BF48FC100428756;
+					};
+					717903111BF48FC200428756 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FA2863D27N;
+					};
+					717903201BF48FC200428756 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FA2863D27N;
+					};
+				};
+			};
+			buildConfigurationList = 717902E01BF48FC100428756 /* Build configuration list for PBXProject "Oncenote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 717902DC1BF48FC100428756;
+			productRefGroup = 717902E61BF48FC100428756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				717902E41BF48FC100428756 /* Oncenote */,
+				717902FD1BF48FC200428756 /* OncenoteTests */,
+				717903081BF48FC200428756 /* OncenoteUITests */,
+				717903111BF48FC200428756 /* Oncenote WatchKit App */,
+				717903201BF48FC200428756 /* Oncenote WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		717902E31BF48FC100428756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717902F81BF48FC100428756 /* LaunchScreen.storyboard in Resources */,
+				717902F51BF48FC100428756 /* Assets.xcassets in Resources */,
+				717902F31BF48FC100428756 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717902FC1BF48FC200428756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717903071BF48FC200428756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717903101BF48FC200428756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7179031B1BF48FC200428756 /* Assets.xcassets in Resources */,
+				717903191BF48FC200428756 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7179031F1BF48FC200428756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717903351BF48FC200428756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		717902E11BF48FC100428756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717902F01BF48FC100428756 /* ViewController.m in Sources */,
+				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,
+				717902EA1BF48FC100428756 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717902FA1BF48FC200428756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717903031BF48FC200428756 /* OncenoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717903051BF48FC200428756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7179030E1BF48FC200428756 /* OncenoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7179031D1BF48FC200428756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7179032D1BF48FC200428756 /* ExtensionDelegate.m in Sources */,
+				7179032A1BF48FC200428756 /* InterfaceController.m in Sources */,
+				717903301BF48FC200428756 /* NotificationController.m in Sources */,
+				717903331BF48FC200428756 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		717903001BF48FC200428756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 717902E41BF48FC100428756 /* Oncenote */;
+			targetProxy = 717902FF1BF48FC200428756 /* PBXContainerItemProxy */;
+		};
+		7179030B1BF48FC200428756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 717902E41BF48FC100428756 /* Oncenote */;
+			targetProxy = 7179030A1BF48FC200428756 /* PBXContainerItemProxy */;
+		};
+		717903151BF48FC200428756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 717903111BF48FC200428756 /* Oncenote WatchKit App */;
+			targetProxy = 717903141BF48FC200428756 /* PBXContainerItemProxy */;
+		};
+		717903241BF48FC200428756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 717903201BF48FC200428756 /* Oncenote WatchKit Extension */;
+			targetProxy = 717903231BF48FC200428756 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		717902F11BF48FC100428756 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				717902F21BF48FC100428756 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		717902F61BF48FC100428756 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				717902F71BF48FC100428756 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		717903171BF48FC200428756 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				717903181BF48FC200428756 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		717903371BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		717903381BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7179033A1BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Oncenote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7179033B1BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Oncenote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		7179033E1BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Oncenote_WatchKit_Extension;
+				INFOPLIST_FILE = "Oncenote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7179033F1BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Oncenote_WatchKit_Extension;
+				INFOPLIST_FILE = "Oncenote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		717903421BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Oncenote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		717903431BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Oncenote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.Oncenote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		717903451BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OncenoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.OncenoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oncenote.app/Oncenote";
+			};
+			name = Debug;
+		};
+		717903461BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OncenoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.OncenoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oncenote.app/Oncenote";
+			};
+			name = Release;
+		};
+		717903481BF48FC200428756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OncenoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.OncenoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oncenote;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		717903491BF48FC200428756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OncenoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenyufengweb.OncenoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oncenote;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		717902E01BF48FC100428756 /* Build configuration list for PBXProject "Oncenote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717903371BF48FC200428756 /* Debug */,
+				717903381BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		717903391BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7179033A1BF48FC200428756 /* Debug */,
+				7179033B1BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7179033D1BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7179033E1BF48FC200428756 /* Debug */,
+				7179033F1BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		717903411BF48FC200428756 /* Build configuration list for PBXNativeTarget "Oncenote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717903421BF48FC200428756 /* Debug */,
+				717903431BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		717903441BF48FC200428756 /* Build configuration list for PBXNativeTarget "OncenoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717903451BF48FC200428756 /* Debug */,
+				717903461BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		717903471BF48FC200428756 /* Build configuration list for PBXNativeTarget "OncenoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717903481BF48FC200428756 /* Debug */,
+				717903491BF48FC200428756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 717902DD1BF48FC100428756 /* Project object */;
+}

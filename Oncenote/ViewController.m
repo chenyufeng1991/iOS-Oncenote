@@ -126,6 +126,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
+  //设置TableView的圆角；
+  tableView.layer.cornerRadius = 10;
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
   cell.textLabel.text = [self.noteArray objectAtIndex:indexPath.row];

@@ -24,6 +24,14 @@
 
 #pragma mark - 设置导航栏的按钮
 - (void)setNavigationBarItemButton{
+  
+  //设置导航栏的背景颜色；
+  [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1]];
+  
+  //设置界面的背景颜色
+  self.view.backgroundColor = [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1];
+  
+  
   //设置左侧“设置”按钮；
   UIButton *naviSettingButton  = [UIButton buttonWithType:UIButtonTypeCustom];
   [naviSettingButton setBackgroundImage:[UIImage imageNamed:@"navi_setting.png"] forState:UIControlStateNormal];
@@ -31,7 +39,7 @@
   naviSettingButton.frame = CGRectMake(0, 0, 30, 30);
   UIBarButtonItem *naviSetting = [[UIBarButtonItem alloc] initWithCustomView:naviSettingButton];
   self.navigationItem.leftBarButtonItem = naviSetting;
-
+  
   //设置右侧“刷新”，“查找”按钮；
   UIButton *naviRefreshButton  = [UIButton buttonWithType:UIButtonTypeCustom];
   [naviRefreshButton setBackgroundImage:[UIImage imageNamed:@"navi_refresh.png"] forState:UIControlStateNormal];

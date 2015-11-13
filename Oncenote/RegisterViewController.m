@@ -7,7 +7,7 @@
 //
 
 #import "RegisterViewController.h"
-#import "BmobOperation.h"
+#import <BmobSDK/Bmob.h>
 
 @interface RegisterViewController ()
 
@@ -30,24 +30,22 @@
   
   if (![username  isEqual: @""] && ![password  isEqual: @""]) {
     //用户名密码同时不为空，才可以进行注册；
-    BmobOperation *addUser = [[BmobOperation alloc] init];
-    [addUser addUserToUserTable:@"_User" username:username password:password todo:^(BOOL isSuccessful, NSError *error) {
-      //todo;
+    BmobUser *user = [[BmobUser alloc]init];
+    [user setUsername:username];
+    [user setPassword:password];
+    [user signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
       if (isSuccessful) {
-        [self showPromptDialog:@"提示" andMessage:@"创建账户成功，请登录！" andButton:@"确定" andAction:^(UIAlertAction *action) {
-          
+        NSLog(@"注册成功");
+        [self showPromptDialog:@"提示" andMessage:@"注册成功，请登录" andButton:@"确定" andAction:^(UIAlertAction *action) {
+          //
         }];
-      } else {
-        NSLog(@"注册失败：%@",error);
+      }else{
+        NSLog(@"注册失败");
       }
     }];
-    
   }else{
-    [self showPromptDialog:@"提示" andMessage:@"用户名密码不能为空！" andButton:@"确定" andAction:^(UIAlertAction *action) {
-      
-    }];
+    NSLog(@"请输入信息");
   }
-  
 }
 
 #pragma mark - 触摸屏幕隐藏键盘

@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong,nonatomic) NSString *GLOBAL_OBJECTID;//全局的objectID;
+@property (strong,nonatomic) NSString *GLOBAL_USERNAME;//全局的用户名；
 
 @end
 

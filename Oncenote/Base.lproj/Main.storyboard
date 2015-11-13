@@ -79,6 +79,10 @@
                         <color key="backgroundColor" red="0.26914838939537483" green="0.69019607843137254" blue="0.37888209913975923" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qMH-DY-mSp"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="TBT-rd-hoA" id="mvT-dn-Dvg"/>
+                        <outlet property="usernameTextField" destination="Ncw-o5-4Hp" id="fDb-ab-jbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcA-gR-ant" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +150,9 @@
                                 <state key="normal" title="创建账户">
                                     <color key="titleColor" red="0.01176470588" green="0.27450980390000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountButtonPressed:" destination="FPm-hS-1Zf" eventType="touchUpInside" id="C0P-Eb-mYn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7t-gY-L2f">
                                 <rect key="frame" x="102" y="517" width="117" height="32"/>
@@ -164,6 +171,10 @@
                         <color key="backgroundColor" red="0.27058823529411763" green="0.69019607843137254" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Lk-vG-mfw"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="YXb-lc-8lx" id="45b-h8-RPI"/>
+                        <outlet property="usernameTextField" destination="YBn-64-01r" id="egm-4P-dfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn1-Cz-yI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

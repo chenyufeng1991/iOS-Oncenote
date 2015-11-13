@@ -32,6 +32,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *naviSearchImage;
 @property (weak, nonatomic) IBOutlet UILabel *naviUsername;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *textImageView;
+
+
+
+
+
 @end
 
 @implementation MainViewController
@@ -51,6 +58,10 @@
   [self.naviSettingImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSettingButtonPressed:)]];
   [self.naviRefreshImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviRefreshButtonPressed:)]];
   [self.naviSearchImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSearchButtonPressed:)]];
+  
+  //绑定图片;
+  [self.textImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textImageButtonPressed:)]];
+  
   
   
   
@@ -85,6 +96,16 @@
 }
 
 - (void)noteHeaderPressed:(id)sender{
+  
+}
+
+//跳转到新增笔记的页面-->AddNoteViewController;
+- (void)textImageButtonPressed:(id)sender{
+  UIViewController *addNoteViewController = [[UIViewController alloc] init];
+  addNoteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddNoteViewController"];
+  [self presentViewController:addNoteViewController animated:true completion:^{
+    //todo;
+  }];
   
 }
 
@@ -163,29 +184,6 @@
 }
 
 
-//#pragma mark - Bmob数据处理
-////往_User表增加一个用户；
-//- (void)addUserToUserTable:(NSString*)tableName username:(NSString*)username password:(NSString*)password{
-//  BmobObject *user = [BmobObject objectWithClassName:tableName];
-//  [user setObject:username forKey:@"username"];
-//  [user setObject:password forKey:@"password"];
-//  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//    NSLog(@"插入一个用户成功");
-//  }];
-//}
-//
-////插入一条笔记到Note表，包括2个字段，userId,noteText;
-//- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteText:(NSString*)noteText{
-//  
-//  BmobObject *user = [BmobObject objectWithClassName:tableName];
-//  [user setObject:userId forKey:@"userId"];
-//  [user setObject:noteText forKey:@"noteText"];
-//  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//    NSLog(@"插入一条笔记成功");
-//  }];
-//  
-//  
-//}
 
 
 

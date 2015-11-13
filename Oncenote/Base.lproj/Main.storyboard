@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vvF-85-HrR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="b9I-jw-xEZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -47,9 +47,12 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.68627450980392157" green="0.89411764705882346" blue="0.78823529411764703" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="登陆">
+                                <state key="normal" title="登录">
                                     <color key="titleColor" red="0.011764705882352941" green="0.27450980392156865" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="b9I-jw-xEZ" eventType="touchUpInside" id="7oy-6G-6so"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qZt-c8-vr3">
                                 <rect key="frame" x="130" y="380" width="60" height="30"/>
@@ -68,7 +71,7 @@
                                     <color key="titleColor" red="0.67450980392156867" green="0.94117647058823528" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FPm-hS-1Zf" kind="push" id="O5o-uD-NOm"/>
+                                    <segue destination="FPm-hS-1Zf" kind="modal" id="46d-mX-OvT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="1240" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Zwz-k8-Xcq">
             <objects>
-                <viewController id="FPm-hS-1Zf" sceneMemberID="viewController">
+                <viewController id="FPm-hS-1Zf" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kR-bh-ze5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +156,7 @@
                                     <color key="titleColor" red="0.67450980390000004" green="0.94117647059999998" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="b9I-jw-xEZ" kind="push" id="rsH-Ie-sFG"/>
+                                    <segue destination="b9I-jw-xEZ" kind="modal" id="pLJ-W5-MAZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,7 +172,7 @@
         <!--主界面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,37 +282,50 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NiU-Kc-xHK"/>
                                 </connections>
                             </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navi_setting" id="3Rb-kc-FDO">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navi_refresh" id="rE5-wT-sSR">
+                                <rect key="frame" x="234" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navi_search" id="ygl-1f-hNd">
+                                <rect key="frame" x="279" y="22" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈宇峰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1I4-yN-02Z">
+                                <rect key="frame" x="54" y="26" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.26914838940000002" green="0.69019607839999997" blue="0.37888209909999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="qbS-H5-RJN">
+                                <rect key="frame" x="0.0" y="50" width="1000" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="主界面" id="Bs1-GG-Xfh"/>
                     <connections>
-                        <outlet property="noteTableView" destination="zVu-dn-TfY" id="kIH-5t-HVn"/>
+                        <outlet property="naviRefreshImage" destination="rE5-wT-sSR" id="b0G-Zr-Vpx"/>
+                        <outlet property="naviSearchImage" destination="ygl-1f-hNd" id="G8n-k4-IKF"/>
+                        <outlet property="naviSettingImage" destination="3Rb-kc-FDO" id="QLp-Ne-snA"/>
+                        <outlet property="noteTableView" destination="zVu-dn-TfY" id="S6A-2L-j9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="-62"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="MIx-eD-n9I">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vvF-85-HrR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KSG-gd-dVD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="b9I-jw-xEZ" kind="relationship" relationship="rootViewController" id="9rs-NZ-xks"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xfK-l7-g1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="708" y="321"/>
+            <point key="canvasLocation" x="1824" y="-113"/>
         </scene>
     </scenes>
     <resources>
@@ -319,8 +335,8 @@
         <image name="main_list" width="58" height="57"/>
         <image name="main_photo" width="57" height="56"/>
         <image name="main_text" width="57" height="56"/>
+        <image name="navi_refresh" width="90" height="90"/>
+        <image name="navi_search" width="90" height="90"/>
+        <image name="navi_setting" width="90" height="90"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="rsH-Ie-sFG"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -8,15 +8,16 @@
 
 
 /*
- 界面的背景灰色：[UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1]
- 主色调绿色：[UIColor colorWithRed:0 green:0.6 blue:0.26 alpha:1]
+ 界面的背景灰色：[UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1] = 227，227，227
+ 主色调绿色：[UIColor colorWithRed:0 green:0.6 blue:0.26 alpha:1] = 0，135，66
  
  
  */
 
-#import "ViewController.h"
+#import "MainViewController.h"
+#import <BmobSDK/Bmob.h>
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *noteTableView;//“笔记”的TableView
 
@@ -24,55 +25,28 @@
 @property(nonatomic,strong) NSArray *noteTitleArray;
 @property(nonatomic,strong) NSArray *noteTimeArray;
 
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *naviSettingImage;
+@property (weak, nonatomic) IBOutlet UIImageView *naviRefreshImage;
+@property (weak, nonatomic) IBOutlet UIImageView *naviSearchImage;
+
+
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  [self setNavigationBarItemButton];
   
   //添加数据
   self.noteTitleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
   self.noteTimeArray = [[NSArray alloc] initWithObjects:@"2015.10.1",@"2011.1.1",@"1991.12.12", nil];
   
-  
-}
-
-#pragma mark - 设置导航栏的按钮
-- (void)setNavigationBarItemButton{
-  
-  //设置导航栏的背景颜色；
-  [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.89 green:0.89 blue:0.89 alpha:1]];
-  
-  //设置界面的背景颜色
-  self.view.backgroundColor = [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1];
-  
-  
-  //设置左侧“设置”按钮；
-  UIButton *naviSettingButton  = [UIButton buttonWithType:UIButtonTypeCustom];
-  [naviSettingButton setBackgroundImage:[UIImage imageNamed:@"navi_setting.png"] forState:UIControlStateNormal];
-  [naviSettingButton addTarget:self action:@selector(naviSettingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-  naviSettingButton.frame = CGRectMake(0, 0, 30, 30);
-  UIBarButtonItem *naviSetting = [[UIBarButtonItem alloc] initWithCustomView:naviSettingButton];
-  self.navigationItem.leftBarButtonItem = naviSetting;
-  
-  //设置右侧“刷新”，“查找”按钮；
-  UIButton *naviRefreshButton  = [UIButton buttonWithType:UIButtonTypeCustom];
-  [naviRefreshButton setBackgroundImage:[UIImage imageNamed:@"navi_refresh.png"] forState:UIControlStateNormal];
-  [naviRefreshButton addTarget:self action:@selector(naviRefreshButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-  naviRefreshButton.frame = CGRectMake(0, 0, 30, 30);
-  UIBarButtonItem *naviRefresh  = [[UIBarButtonItem alloc] initWithCustomView:naviRefreshButton];
-  
-  UIButton *naviSearchButton  = [UIButton buttonWithType:UIButtonTypeCustom];
-  [naviSearchButton setBackgroundImage:[UIImage imageNamed:@"navi_search.png"] forState:UIControlStateNormal];
-  [naviSearchButton addTarget:self action:@selector(naviSearchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-  naviSearchButton.frame = CGRectMake(0, 0, 30, 30);
-  UIBarButtonItem *naviSearch  = [[UIBarButtonItem alloc] initWithCustomView:naviSearchButton];
-  
-  NSArray *itemButtonArray = [[NSArray alloc] initWithObjects:naviSearch,naviRefresh, nil];
-  self.navigationItem.rightBarButtonItems = itemButtonArray;
+  //绑定控件；
+  [self.naviSettingImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSettingButtonPressed:)]];
+  [self.naviRefreshImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviRefreshButtonPressed:)]];
+  [self.naviSearchImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSearchButtonPressed:)]];
   
 }
 
@@ -100,22 +74,16 @@
 }
 
 - (void)naviSearchButtonPressed:(id)sender{
-  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"这是查找按钮" preferredStyle:  UIAlertControllerStyleAlert];
-  [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //点击按钮的响应事件；
-  }]];
   
-  [self presentViewController:alert animated:true completion:nil];
+  //这里进行简单的测试，点击查找按钮，向Note表插入一条笔记；并且制定了这条笔记属于的用户ID；
+  [self addNoteToNoteTable:@"Note" userId:@"5d5f0b570c" noteText:@"这是我写的第一条笔记哦！！！"];
   
 }
 
 - (void)noteHeaderPressed:(id)sender{
-  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"这是TableView头部" preferredStyle:  UIAlertControllerStyleAlert];
-  [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //点击按钮的响应事件；
-  }]];
   
-  [self presentViewController:alert animated:true completion:nil];
+  //这里进行简单的测试，点击这个头部，向_User表插入一条用户数据；
+  [self addUserToUserTable:@"_User" username:@"陈宇峰" password:@"19911027210"];
   
 }
 
@@ -192,6 +160,33 @@
   return view;
   
 }
+
+
+#pragma mark - Bmob数据处理
+//往_User表增加一个用户；
+- (void)addUserToUserTable:(NSString*)tableName username:(NSString*)username password:(NSString*)password{
+  BmobObject *user = [BmobObject objectWithClassName:tableName];
+  [user setObject:username forKey:@"username"];
+  [user setObject:password forKey:@"password"];
+  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+    NSLog(@"插入一个用户成功");
+  }];
+}
+
+//插入一条笔记到Note表，包括2个字段，userId,noteText;
+- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteText:(NSString*)noteText{
+  
+  BmobObject *user = [BmobObject objectWithClassName:tableName];
+  [user setObject:userId forKey:@"userId"];
+  [user setObject:noteText forKey:@"noteText"];
+  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+    NSLog(@"插入一条笔记成功");
+  }];
+  
+  
+}
+
+
 
 @end
 

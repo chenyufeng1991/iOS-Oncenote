@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *noteTableView;//“笔记”的TableView
 
 
-@property(nonatomic,strong) NSArray *noteArray;
+@property(nonatomic,strong) NSArray *noteTitleArray;
+@property(nonatomic,strong) NSArray *noteTimeArray;
 
 @end
 
@@ -33,7 +34,8 @@
   [self setNavigationBarItemButton];
   
   //添加数据
-  self.noteArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
+  self.noteTitleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
+  self.noteTimeArray = [[NSArray alloc] initWithObjects:@"2015.10.1",@"2011.1.1",@"1991.12.12", nil];
   
   
 }
@@ -125,12 +127,37 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  /*
+   let cell = self.priceManagementTableView.dequeueReusableCellWithIdentifier("priceManagementCell")
+   
+   if(indexPath.row == 0){
+   let title = cell!.viewWithTag(101) as! UILabel
+   let desc = cell!.viewWithTag(102) as! UILabel
+   title.text = priceManagementContentName[indexPath.row]
+   
+   desc.text = filterDescriptionXML.filterDescriptionXMLCharacter(priceManagementContent[indexPath.row])
+   
+   //        desc.text = priceManagementContent[indexPath.row]
+   }
+   else{
+   let title = cell!.viewWithTag(101) as! UILabel
+   title.text = priceManagementContentName[indexPath.row]
+   
+   }
+   */
+  
   
   //设置TableView的圆角；
   tableView.layer.cornerRadius = 10;
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
-  cell.textLabel.text = [self.noteArray objectAtIndex:indexPath.row];
+  
+  UILabel *noteTitle = (UILabel*)[cell viewWithTag:101];
+  UILabel *noteTime = (UILabel*)[cell viewWithTag:102];
+  
+  noteTitle.text = [self.noteTitleArray objectAtIndex:indexPath.row];
+  noteTime.text = [self.noteTimeArray objectAtIndex:indexPath.row];
+  
   return cell;
   
 }

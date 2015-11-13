@@ -24,6 +24,7 @@
 		717903301BF48FC200428756 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7179032F1BF48FC200428756 /* NotificationController.m */; };
 		717903331BF48FC200428756 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903321BF48FC200428756 /* GlanceController.m */; };
 		717903351BF48FC200428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717903341BF48FC200428756 /* Assets.xcassets */; };
+		718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -121,6 +122,8 @@
 		717903321BF48FC200428756 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		717903341BF48FC200428756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		717903361BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 				71A793771BF5CDCA00410FFC /* RegisterViewController.m */,
 				717902EE1BF48FC100428756 /* MainViewController.h */,
 				717902EF1BF48FC100428756 /* MainViewController.m */,
+				718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */,
+				718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
+				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,
 				71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */,
 				71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */,
 				717902F01BF48FC100428756 /* MainViewController.m in Sources */,

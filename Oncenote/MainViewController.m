@@ -17,6 +17,7 @@
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "BmobOperation.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -26,12 +27,10 @@
 @property(nonatomic,strong) NSArray *noteTitleArray;
 @property(nonatomic,strong) NSArray *noteTimeArray;
 
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *naviSettingImage;
 @property (weak, nonatomic) IBOutlet UIImageView *naviRefreshImage;
 @property (weak, nonatomic) IBOutlet UIImageView *naviSearchImage;
-
+@property (weak, nonatomic) IBOutlet UILabel *naviUsername;
 
 @end
 
@@ -40,7 +39,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  //添加数据
+  //设置navi中的用户名；
+  AppDelegate *app = [[UIApplication sharedApplication] delegate];
+  self.naviUsername.text = app.GLOBAL_USERNAME;
+  
+  //添加数据;
   self.noteTitleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
   self.noteTimeArray = [[NSArray alloc] initWithObjects:@"2015.10.1",@"2011.1.1",@"1991.12.12", nil];
   
@@ -48,6 +51,8 @@
   [self.naviSettingImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSettingButtonPressed:)]];
   [self.naviRefreshImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviRefreshButtonPressed:)]];
   [self.naviSearchImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSearchButtonPressed:)]];
+  
+  
   
 }
 

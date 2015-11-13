@@ -331,6 +331,7 @@
                         <outlet property="naviRefreshImage" destination="rE5-wT-sSR" id="b0G-Zr-Vpx"/>
                         <outlet property="naviSearchImage" destination="ygl-1f-hNd" id="G8n-k4-IKF"/>
                         <outlet property="naviSettingImage" destination="3Rb-kc-FDO" id="QLp-Ne-snA"/>
+                        <outlet property="naviUsername" destination="1I4-yN-02Z" id="J0E-Pl-888"/>
                         <outlet property="noteTableView" destination="zVu-dn-TfY" id="S6A-2L-j9i"/>
                     </connections>
                 </viewController>

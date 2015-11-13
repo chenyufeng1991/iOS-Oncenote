@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -35,12 +36,19 @@
       //错误处理
       NSLog(@"登录失败");
     }else{
+      
+      //给全局变量设值；
+      AppDelegate *globalApp = [[UIApplication sharedApplication] delegate];
+      globalApp.GLOBAL_USERNAME = username;
+      globalApp.GLOBAL_OBJECTID = user.objectId;
+      
       NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
       UIViewController *mainViewController = [[UIViewController alloc] init];
       mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
       [self presentViewController:mainViewController animated:true completion:^{
         //todo;
       }];
+      
     }
     
   }];

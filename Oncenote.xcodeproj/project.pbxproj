@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		717902EA1BF48FC100428756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902E91BF48FC100428756 /* main.m */; };
 		717902ED1BF48FC100428756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EC1BF48FC100428756 /* AppDelegate.m */; };
-		717902F01BF48FC100428756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EF1BF48FC100428756 /* ViewController.m */; };
+		717902F01BF48FC100428756 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EF1BF48FC100428756 /* MainViewController.m */; };
 		717902F31BF48FC100428756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717902F11BF48FC100428756 /* Main.storyboard */; };
 		717902F51BF48FC100428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717902F41BF48FC100428756 /* Assets.xcassets */; };
 		717902F81BF48FC100428756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717902F61BF48FC100428756 /* LaunchScreen.storyboard */; };
@@ -25,6 +25,7 @@
 		717903331BF48FC200428756 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903321BF48FC200428756 /* GlanceController.m */; };
 		717903351BF48FC200428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717903341BF48FC200428756 /* Assets.xcassets */; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FAC95080E1299F0315B3C301 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A3A8C36BAD439F0DCC8BC9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +92,8 @@
 		717902E91BF48FC100428756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717902EB1BF48FC100428756 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		717902EC1BF48FC100428756 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		717902EE1BF48FC100428756 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		717902EF1BF48FC100428756 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		717902EE1BF48FC100428756 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		717902EF1BF48FC100428756 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		717902F21BF48FC100428756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		717902F41BF48FC100428756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		717902F71BF48FC100428756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +122,8 @@
 		717903361BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		71A793771BF5CDCA00410FFC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C6D3406A90F2A54E2CBA0100 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,8 +201,10 @@
 				717902EC1BF48FC100428756 /* AppDelegate.m */,
 				71A793731BF5B5F000410FFC /* LoginViewController.h */,
 				71A793741BF5B5F000410FFC /* LoginViewController.m */,
-				717902EE1BF48FC100428756 /* ViewController.h */,
-				717902EF1BF48FC100428756 /* ViewController.m */,
+				71A793761BF5CDCA00410FFC /* RegisterViewController.h */,
+				71A793771BF5CDCA00410FFC /* RegisterViewController.m */,
+				717902EE1BF48FC100428756 /* MainViewController.h */,
+				717902EF1BF48FC100428756 /* MainViewController.m */,
 				717902F11BF48FC100428756 /* Main.storyboard */,
 				717902F41BF48FC100428756 /* Assets.xcassets */,
 				717902F61BF48FC100428756 /* LaunchScreen.storyboard */,
@@ -527,8 +532,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
 				71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */,
-				717902F01BF48FC100428756 /* ViewController.m in Sources */,
+				717902F01BF48FC100428756 /* MainViewController.m in Sources */,
 				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,
 				717902EA1BF48FC100428756 /* main.m in Sources */,
 			);

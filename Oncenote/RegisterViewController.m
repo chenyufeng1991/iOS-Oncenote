@@ -36,15 +36,15 @@
     [user signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
       if (isSuccessful) {
         NSLog(@"注册成功");
-        [self showPromptDialog:@"提示" andMessage:@"注册成功，请登录" andButton:@"确定" andAction:^(UIAlertAction *action) {
-          //
-        }];
+        [self showPromptDialog:@"提示" andMessage:@"注册成功，请登录" andButton:@"确定" andAction:nil];
       }else{
         NSLog(@"注册失败");
+        [self showPromptDialog:@"提示" andMessage:@"服务器异常，注册失败。" andButton:@"确定" andAction:nil];
       }
     }];
   }else{
     NSLog(@"请输入信息");
+    [self showPromptDialog:@"提示" andMessage:@"请填写完整信息。" andButton:@"确定" andAction:nil];
   }
 }
 

@@ -167,6 +167,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="noteTextTextView" destination="oQJ-Yg-tE0" id="g7g-cB-4WA"/>
+                        <outlet property="noteTitleTextField" destination="nru-WZ-kBh" id="xUP-Lf-ChV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykZ-g7-m5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

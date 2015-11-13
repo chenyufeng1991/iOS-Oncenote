@@ -40,17 +40,14 @@
       //给全局变量设值；
       AppDelegate *globalApp = [[UIApplication sharedApplication] delegate];
       globalApp.GLOBAL_USERNAME = username;
-      globalApp.GLOBAL_OBJECTID = user.objectId;
+      globalApp.GLOBAL_USERID = user.objectId;
       
       NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
       UIViewController *mainViewController = [[UIViewController alloc] init];
       mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-      [self presentViewController:mainViewController animated:true completion:^{
-        //todo;
-      }];
+      [self presentViewController:mainViewController animated:true completion:nil];
       
     }
-    
   }];
   
 }

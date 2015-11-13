@@ -127,25 +127,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  /*
-   let cell = self.priceManagementTableView.dequeueReusableCellWithIdentifier("priceManagementCell")
-   
-   if(indexPath.row == 0){
-   let title = cell!.viewWithTag(101) as! UILabel
-   let desc = cell!.viewWithTag(102) as! UILabel
-   title.text = priceManagementContentName[indexPath.row]
-   
-   desc.text = filterDescriptionXML.filterDescriptionXMLCharacter(priceManagementContent[indexPath.row])
-   
-   //        desc.text = priceManagementContent[indexPath.row]
-   }
-   else{
-   let title = cell!.viewWithTag(101) as! UILabel
-   title.text = priceManagementContentName[indexPath.row]
-   
-   }
-   */
-  
   
   //设置TableView的圆角；
   tableView.layer.cornerRadius = 10;

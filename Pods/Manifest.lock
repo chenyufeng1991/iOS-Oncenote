@@ -1,0 +1,10 @@
+PODS:
+  - BmobSDK (1.6.5)
+
+DEPENDENCIES:
+  - BmobSDK
+
+SPEC CHECKSUMS:
+  BmobSDK: 9928a9135a3a7823c6d8bd2bcd9baffeb8e6289a
+
+COCOAPODS: 0.39.0

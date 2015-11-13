@@ -16,6 +16,7 @@
 
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "BmobOperation.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -74,16 +75,11 @@
 }
 
 - (void)naviSearchButtonPressed:(id)sender{
-  
-  //这里进行简单的测试，点击查找按钮，向Note表插入一条笔记；并且制定了这条笔记属于的用户ID；
-  [self addNoteToNoteTable:@"Note" userId:@"5d5f0b570c" noteText:@"这是我写的第一条笔记哦！！！"];
+
   
 }
 
 - (void)noteHeaderPressed:(id)sender{
-  
-  //这里进行简单的测试，点击这个头部，向_User表插入一条用户数据；
-  [self addUserToUserTable:@"_User" username:@"陈宇峰" password:@"19911027210"];
   
 }
 
@@ -162,29 +158,29 @@
 }
 
 
-#pragma mark - Bmob数据处理
-//往_User表增加一个用户；
-- (void)addUserToUserTable:(NSString*)tableName username:(NSString*)username password:(NSString*)password{
-  BmobObject *user = [BmobObject objectWithClassName:tableName];
-  [user setObject:username forKey:@"username"];
-  [user setObject:password forKey:@"password"];
-  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-    NSLog(@"插入一个用户成功");
-  }];
-}
-
-//插入一条笔记到Note表，包括2个字段，userId,noteText;
-- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteText:(NSString*)noteText{
-  
-  BmobObject *user = [BmobObject objectWithClassName:tableName];
-  [user setObject:userId forKey:@"userId"];
-  [user setObject:noteText forKey:@"noteText"];
-  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-    NSLog(@"插入一条笔记成功");
-  }];
-  
-  
-}
+//#pragma mark - Bmob数据处理
+////往_User表增加一个用户；
+//- (void)addUserToUserTable:(NSString*)tableName username:(NSString*)username password:(NSString*)password{
+//  BmobObject *user = [BmobObject objectWithClassName:tableName];
+//  [user setObject:username forKey:@"username"];
+//  [user setObject:password forKey:@"password"];
+//  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+//    NSLog(@"插入一个用户成功");
+//  }];
+//}
+//
+////插入一条笔记到Note表，包括2个字段，userId,noteText;
+//- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteText:(NSString*)noteText{
+//  
+//  BmobObject *user = [BmobObject objectWithClassName:tableName];
+//  [user setObject:userId forKey:@"userId"];
+//  [user setObject:noteText forKey:@"noteText"];
+//  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+//    NSLog(@"插入一条笔记成功");
+//  }];
+//  
+//  
+//}
 
 
 

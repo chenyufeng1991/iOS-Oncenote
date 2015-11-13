@@ -12,14 +12,13 @@
 @implementation BmobOperation
 
 //插入一条笔记到Note表，包括2个字段，userId,noteText;
-- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteText:(NSString*)noteText{
+- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteTitle:(NSString*)noteTitle noteText:(NSString*)noteText todo:(void(^)(BOOL isSuccessful, NSError *error)) todo{
   
-  BmobObject *user = [BmobObject objectWithClassName:tableName];
-  [user setObject:userId forKey:@"userId"];
-  [user setObject:noteText forKey:@"noteText"];
-  [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-    NSLog(@"插入一条笔记成功");
-  }];
+  BmobObject *note = [BmobObject objectWithClassName:tableName];
+  [note setObject:userId forKey:@"userId"];
+  [note setObject:noteTitle forKey:@"noteTitle"];
+  [note setObject:noteText forKey:@"noteText"];
+  [note saveInBackgroundWithResultBlock:todo];
   
   
 }

@@ -25,6 +25,7 @@
 		717903331BF48FC200428756 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717903321BF48FC200428756 /* GlanceController.m */; };
 		717903351BF48FC200428756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717903341BF48FC200428756 /* Assets.xcassets */; };
 		718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		718FF3A71BF63687009A3F6D /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FF3A61BF63687009A3F6D /* Constant.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -124,6 +125,8 @@
 		717903361BF48FC200428756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
 		718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		718FF3A51BF63687009A3F6D /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		718FF3A61BF63687009A3F6D /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 		717902E71BF48FC100428756 /* Oncenote */ = {
 			isa = PBXGroup;
 			children = (
+				718FF3A41BF63664009A3F6D /* Model */,
 				71A793801BF5E7AD00410FFC /* Resource */,
 				71A7937F1BF5E79F00410FFC /* View */,
 				71A7937E1BF5E78100410FFC /* Other */,
@@ -273,6 +277,15 @@
 				717903271BF48FC200428756 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		718FF3A41BF63664009A3F6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				718FF3A51BF63687009A3F6D /* Constant.h */,
+				718FF3A61BF63687009A3F6D /* Constant.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		71A793791BF5E6B400410FFC /* BmobUtils */ = {
@@ -589,6 +602,7 @@
 				717902F01BF48FC100428756 /* MainViewController.m in Sources */,
 				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,
 				717902EA1BF48FC100428756 /* main.m in Sources */,
+				718FF3A71BF63687009A3F6D /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

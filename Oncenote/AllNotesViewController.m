@@ -55,7 +55,16 @@
 
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
   
-  cell.textLabel.text = [[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteTitle"];
+  UILabel *noteTitle = (UILabel*)[cell viewWithTag:101];
+  UILabel *noteTime = (UILabel*)[cell viewWithTag:102];
+  UILabel *noteText = (UILabel*)[cell viewWithTag:103];
+  
+  
+  
+  noteTitle.text = [[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteTitle"];
+  noteTime.text = [[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteCreatedAt"];
+  noteText.text = [[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteText"];
+  
   
   return cell;
 

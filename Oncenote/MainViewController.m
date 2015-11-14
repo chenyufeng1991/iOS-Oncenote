@@ -140,7 +140,7 @@
   noteTitle.text = [[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteTitle"];
   
   //这里需要截取字符串，只要显示日期即可，不需要时分秒；
-  noteTime.text = [self getDateFromString:[[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteCreatedAt"]];
+  noteTime.text = [[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteCreatedAt"];
   
   return cell;
   
@@ -219,7 +219,8 @@
           note.username = [obj objectForKey:@"username"];
           note.noteTitle = [obj objectForKey:@"noteTitle"];
           note.noteText = [obj objectForKey:@"noteText"];
-          note.noteCreatedAt = [obj objectForKey:@"createdAt"];
+          note.noteCreatedAt = [self getDateFromString:[obj objectForKey:@"createdAt"]];
+
           
           [_notesArray addObject:note];
           
@@ -248,7 +249,7 @@
   note.username = @"";
   note.noteTitle = @"";
   note.noteText = @"";
-  note.noteCreatedAt = [[NSDate alloc] init];
+  note.noteCreatedAt = @"";
   
   if (!_notesArray) {
     self.notesArray = [[NSMutableArray alloc] initWithCapacity:3];

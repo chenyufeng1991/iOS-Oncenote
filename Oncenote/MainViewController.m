@@ -55,8 +55,8 @@
   //绑定图片;
   [self.textImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textImageButtonPressed:)]];
   
-  
-  
+  //查询用户的笔记；
+  [self queryNoteByUserId:@"Note" userId:app.GLOBAL_USERID limitCount:50];
   
 }
 
@@ -88,9 +88,7 @@
   
   NSLog(@"点击了搜索按钮");
   
-  AppDelegate *app = [[UIApplication sharedApplication] delegate];
-  
-  [self queryNoteByUserId:@"Note" userId:app.GLOBAL_USERID limitCount:50];
+ 
   
 }
 

@@ -8,6 +8,7 @@
 //
 
 #import "AllNotesViewController.h"
+#import "NoteDetailViewController.h"
 
 @interface AllNotesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -73,6 +74,26 @@
 
 
 #pragma mark - UITableViewDelegate
+
+
+
+
+
+#pragma mark - 界面跳转传递数据
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+  
+  if ([segue.identifier isEqualToString:@"NoteDetailSegue"]) {
+    NoteDetailViewController *detail = (NoteDetailViewController*)segue.destinationViewController;
+    NSIndexPath *indePath = self.noteTableView.indexPathForSelectedRow;
+    detail.noteId = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteId"];
+    detail.noteTitle = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteTitle"];
+    detail.noteText = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteText"];
+    
+  }
+  
+  
+  
+}
 
 @end
 

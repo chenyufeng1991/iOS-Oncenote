@@ -30,22 +30,19 @@
 }
 
 
-/*
- - (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteTitle:(NSString*)noteTitle noteText:(NSString*)noteText
- */
-
 #pragma mark - 所有按钮的点击事件
 - (IBAction)naviStoreButtonPressed:(id)sender {
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
   
   NSString *userId = app.GLOBAL_USERID;
+  NSString *username = app.GLOBAL_USERNAME;
   NSString *noteTitle = [self.noteTitleTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   NSString *noteText = [self.noteTextTextView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   
   if (![noteTitle  isEqual: @""] && ![noteText  isEqual: @""]){
     
     BmobOperation *operate = [[BmobOperation alloc] init];
-    [operate addNoteToNoteTable:NOTE_TABLE userId:userId noteTitle:noteTitle noteText:noteText todo:^(BOOL isSuccessful, NSError *error) {
+    [operate addNoteToNoteTable:NOTE_TABLE userId:userId  username:username noteTitle:noteTitle noteText:noteText todo:^(BOOL isSuccessful, NSError *error) {
       if (isSuccessful) {
         [self showPromptDialog:@"提示" andMessage:@"增加一条笔记成功" andButton:@"确定" andAction:^(UIAlertAction *action) {
           //跳回到主界面；

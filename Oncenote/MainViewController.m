@@ -88,7 +88,7 @@
   
   NSLog(@"点击了搜索按钮");
   
- 
+  
   
 }
 
@@ -208,13 +208,18 @@
           [_notesArray addObject:note];
           
           NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
-        }
+        }//if();
       }//for();
     }//else();
     
+    
+    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.notesArray count]);
+    
+    
+    
+    self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, (([self.notesArray count] > 3 ? 3 : [self.notesArray count]) + 1) * 50);
+    
     [self.noteTableView reloadData];
-    
-    
     
   }];
   
@@ -231,8 +236,6 @@
   note.noteText = @"";
   
   if (!_notesArray) {
-//    self.notesArray = [[NSMutableArray alloc] initWithObjects:note,note,note, nil];
-    
     self.notesArray = [[NSMutableArray alloc] initWithCapacity:3];
   }
   

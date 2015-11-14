@@ -123,9 +123,10 @@
   UILabel *noteTitle = (UILabel*)[cell viewWithTag:101];
   UILabel *noteTime = (UILabel*)[cell viewWithTag:102];
   
-  
   noteTitle.text = [[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteTitle"];
-  noteTime.text = @"今天";
+  
+  //这里需要截取字符串，只要显示日期即可，不需要时分秒；
+  noteTime.text = [self getDateFromString:[[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteCreatedAt"]];
   
   return cell;
   
@@ -204,6 +205,7 @@
           note.username = [obj objectForKey:@"username"];
           note.noteTitle = [obj objectForKey:@"noteTitle"];
           note.noteText = [obj objectForKey:@"noteText"];
+          note.noteCreatedAt = [obj objectForKey:@"createdAt"];
           
           [_notesArray addObject:note];
           
@@ -234,6 +236,7 @@
   note.username = @"";
   note.noteTitle = @"";
   note.noteText = @"";
+  note.noteCreatedAt = [[NSDate alloc] init];
   
   if (!_notesArray) {
     self.notesArray = [[NSMutableArray alloc] initWithCapacity:3];
@@ -242,6 +245,34 @@
   return _notesArray;
 }
 
+#pragma mark - 获取日期
+- (NSString *)getDateFromString:(NSString*)date{
+
+  NSString * str = date;
+  NSMutableString * reverseString = [NSMutableString string];
+  for(int i = 0 ; i < str.length; i ++){
+    //倒序读取字符并且存到可变数组数组中
+    unichar c = [str characterAtIndex:str.length- i -1];
+    [reverseString appendFormat:@"%c",c];
+  }
+  str = reverseString;
+  NSLog(@"%@",str);//date已经逆转；
+  
+  NSString *b = [str substringFromIndex:8];//截取后8位；
+  
+  
+  NSString * str2 = b;
+  NSMutableString * reverseString2 = [NSMutableString string];
+  for(int i = 0 ; i < str2.length; i ++){
+    //倒序读取字符并且存到可变数组数组中
+    unichar c = [str2 characterAtIndex:str2.length- i -1];
+    [reverseString2 appendFormat:@"%c",c];
+  }
+  str2 = reverseString2;
+  NSLog(@"%@",str2);//date转换完毕
+  
+  return str2;
+}
 
 @end
 

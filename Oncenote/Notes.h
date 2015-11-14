@@ -14,5 +14,6 @@
 @property(nonatomic,copy) NSString* username;
 @property(nonatomic,copy) NSString* noteTitle;
 @property(nonatomic,copy) NSString* noteText;
+@property(nonatomic,copy) NSDate* noteCreatedAt;//创建笔记的时间；
 
 @end

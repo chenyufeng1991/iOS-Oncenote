@@ -30,6 +30,7 @@
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
 		71BEC27E1BF717190003F173 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC27D1BF717190003F173 /* Notes.m */; settings = {ASSET_TAGS = (); }; };
+		71BEC2811BF753080003F173 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2801BF753080003F173 /* NoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FAC95080E1299F0315B3C301 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A3A8C36BAD439F0DCC8BC9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,8 @@
 		71A7937B1BF5E75600410FFC /* BmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BmobOperation.m; sourceTree = "<group>"; };
 		71BEC27C1BF717190003F173 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		71BEC27D1BF717190003F173 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
+		71BEC27F1BF753080003F173 /* NoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailViewController.h; sourceTree = "<group>"; };
+		71BEC2801BF753080003F173 /* NoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailViewController.m; sourceTree = "<group>"; };
 		C6D3406A90F2A54E2CBA0100 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,6 +316,8 @@
 				717902EF1BF48FC100428756 /* MainViewController.m */,
 				718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */,
 				718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */,
+				71BEC27F1BF753080003F173 /* NoteDetailViewController.h */,
+				71BEC2801BF753080003F173 /* NoteDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */,
 				71BEC27E1BF717190003F173 /* Notes.m in Sources */,
 				71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */,
+				71BEC2811BF753080003F173 /* NoteDetailViewController.m in Sources */,
 				717902F01BF48FC100428756 /* MainViewController.m in Sources */,
 				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,
 				717902EA1BF48FC100428756 /* main.m in Sources */,

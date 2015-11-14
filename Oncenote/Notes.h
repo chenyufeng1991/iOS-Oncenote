@@ -10,6 +10,7 @@
 
 @interface Notes : NSObject
 
+@property(nonatomic,copy) NSString* noteId;
 @property(nonatomic,copy) NSString* userId;
 @property(nonatomic,copy) NSString* username;
 @property(nonatomic,copy) NSString* noteTitle;

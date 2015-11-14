@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="YGY-iR-8wz">
             <objects>
-                <viewController id="b9I-jw-xEZ" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b9I-jw-xEZ" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rEt-12-Ekf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,12 +174,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykZ-g7-m5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="507"/>
+            <point key="canvasLocation" x="2092" y="-417"/>
+        </scene>
+        <!--Note Detail View Controller-->
+        <scene sceneID="5o2-xh-LTC">
+            <objects>
+                <viewController storyboardIdentifier="NoteDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FIk-TI-dCg" customClass="NoteDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R5A-aR-NqN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="65R-Sj-MSq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" id="prm-hs-9LM">
+                                        <rect key="frame" x="8" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_button" id="kmr-S0-fep">
+                                        <rect key="frame" x="209" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_search" id="EV3-j7-Gwh">
+                                        <rect key="frame" x="247" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_button" id="Y5s-aX-bkW">
+                                        <rect key="frame" x="280" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="L9g-Bz-xwY">
+                                <rect key="frame" x="-361" y="65" width="1000" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="笔记" textAlignment="natural" minimumFontSize="17" id="aUW-SP-ai1">
+                                <rect key="frame" x="13" y="74" width="294" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" id="b8L-wi-BVG">
+                                <rect key="frame" x="13" y="109" width="1000" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="eTN-NX-WfU">
+                                <rect key="frame" x="13" y="118" width="294" height="281"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HX8-2e-zGF"/>
+                    <connections>
+                        <outlet property="addImageView" destination="Y5s-aX-bkW" id="Ai6-Jg-5e0"/>
+                        <outlet property="backImageView" destination="prm-hs-9LM" id="F5x-cn-8Ud"/>
+                        <outlet property="noteTextTextView" destination="eTN-NX-WfU" id="cz8-Bl-kok"/>
+                        <outlet property="noteTitleTextField" destination="aUW-SP-ai1" id="Q4h-MB-qxJ"/>
+                        <outlet property="searchImageView" destination="EV3-j7-Gwh" id="Jdu-wP-edq"/>
+                        <outlet property="shareImageView" destination="kmr-S0-fep" id="4ju-Dd-vId"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5G-zj-rea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092" y="303"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Zwz-k8-Xcq">
             <objects>
-                <viewController id="FPm-hS-1Zf" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FPm-hS-1Zf" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kR-bh-ze5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,6 +455,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="FIk-TI-dCg" kind="modal" identifier="NoteDetailSegue" id="gbf-Vr-u3e"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
@@ -431,11 +515,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="-119"/>
+            <point key="canvasLocation" x="1618" y="-417"/>
         </scene>
     </scenes>
     <resources>
         <image name="LoginAppIcon" width="650" height="650"/>
+        <image name="add_button" width="70" height="70"/>
+        <image name="back_button" width="70" height="70"/>
+        <image name="detail_search" width="70" height="70"/>
         <image name="main_alert" width="58" height="56"/>
         <image name="main_chat" width="57" height="56"/>
         <image name="main_list" width="58" height="57"/>
@@ -444,5 +531,6 @@
         <image name="navi_refresh" width="90" height="90"/>
         <image name="navi_search" width="90" height="90"/>
         <image name="navi_setting" width="90" height="90"/>
+        <image name="share_button" width="68" height="68"/>
     </resources>
 </document>

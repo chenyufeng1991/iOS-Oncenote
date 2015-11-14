@@ -19,6 +19,7 @@
 #import "AppDelegate.h"
 #import "Notes.h"
 #import "NoteDetailViewController.h"
+#import "AllNotesViewController.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -93,7 +94,19 @@
   
 }
 
+//点击Header,跳转到所有笔记页面；
 - (void)noteHeaderPressed:(id)sender{
+  
+  AllNotesViewController *allNotesViewController = [[AllNotesViewController alloc] init];
+  allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
+  
+  //传递整个笔记数组；
+  allNotesViewController.allNotesArray = self.notesArray;
+  
+  
+  
+  
+  [self presentViewController:allNotesViewController animated:true completion:nil];
   
 }
 

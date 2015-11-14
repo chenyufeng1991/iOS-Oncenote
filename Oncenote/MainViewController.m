@@ -16,16 +16,12 @@
 
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
-#import "BmobOperation.h"
 #import "AppDelegate.h"
+#import "Notes.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *noteTableView;//“笔记”的TableView
-
-
-@property(nonatomic,strong) NSArray *noteTitleArray;
-@property(nonatomic,strong) NSArray *noteTimeArray;
 
 @property (weak, nonatomic) IBOutlet UIImageView *naviSettingImage;
 @property (weak, nonatomic) IBOutlet UIImageView *naviRefreshImage;
@@ -35,7 +31,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *textImageView;
 
-
+//存放笔记对象的可变数组；
+@property(nonatomic,strong) NSMutableArray *notesArray;
 
 
 
@@ -49,10 +46,6 @@
   //设置navi中的用户名；
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
   self.naviUsername.text = app.GLOBAL_USERNAME;
-  
-  //添加数据;
-  self.noteTitleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3", nil];
-  self.noteTimeArray = [[NSArray alloc] initWithObjects:@"2015.10.1",@"2011.1.1",@"1991.12.12", nil];
   
   //绑定控件；
   [self.naviSettingImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSettingButtonPressed:)]];
@@ -90,8 +83,14 @@
   
 }
 
+//点击导航栏搜索按钮；
 - (void)naviSearchButtonPressed:(id)sender{
-
+  
+  NSLog(@"点击了搜索按钮");
+  
+  AppDelegate *app = [[UIApplication sharedApplication] delegate];
+  
+  [self queryNoteByUserId:@"Note" userId:app.GLOBAL_USERID limitCount:50];
   
 }
 
@@ -113,7 +112,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
   
-  return 3;
+  return [self.notesArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,8 +125,9 @@
   UILabel *noteTitle = (UILabel*)[cell viewWithTag:101];
   UILabel *noteTime = (UILabel*)[cell viewWithTag:102];
   
-  noteTitle.text = [self.noteTitleArray objectAtIndex:indexPath.row];
-  noteTime.text = [self.noteTimeArray objectAtIndex:indexPath.row];
+  
+  noteTitle.text = [[self.notesArray objectAtIndex:indexPath.row] valueForKey:@"noteTitle"];
+  noteTime.text = @"今天";
   
   return cell;
   
@@ -184,10 +184,67 @@
 }
 
 
+#pragma mark - 查询该用户的笔记
 
+- (void) queryNoteByUserId:(NSString*)tableName userId:(NSString*)userId limitCount:(int)limitCount{
+  
+  BmobQuery *queryNote = [BmobQuery queryWithClassName:tableName];
+  queryNote.limit = limitCount;
+  [queryNote findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    
+    if (error) {
+      NSLog(@"查询笔记错误");
+    } else {
+      NSLog(@"正在查询笔记。。。");
+      for (BmobObject *obj in array) {
+        
+        Notes *note = [[Notes alloc] init];
+        
+        if ([(NSString*)[obj objectForKey:@"userId"] isEqualToString:userId]) {
+          
+          note.userId = [obj objectForKey:@"userId"];
+          note.username = [obj objectForKey:@"username"];
+          note.noteTitle = [obj objectForKey:@"noteTitle"];
+          note.noteText = [obj objectForKey:@"noteText"];
+          
+          [_notesArray addObject:note];
+          
+          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
+        }
+      }//for();
+    }//else();
+    
+    [self.noteTableView reloadData];
+    
+    
+    
+  }];
+  
+}
+
+#pragma mark - 懒加载显示笔记内容
+//这里标题的添加也使用懒加载；
+- (NSMutableArray *)notesArray{
+  
+  Notes *note = [[Notes alloc] init];
+  note.userId = @"";
+  note.username = @"";
+  note.noteTitle = @"";
+  note.noteText = @"";
+  
+  if (!_notesArray) {
+//    self.notesArray = [[NSMutableArray alloc] initWithObjects:note,note,note, nil];
+    
+    self.notesArray = [[NSMutableArray alloc] initWithCapacity:3];
+  }
+  
+  return _notesArray;
+}
 
 
 @end
+
+
 
 
 

@@ -29,6 +29,7 @@
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
+		71BEC27E1BF717190003F173 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC27D1BF717190003F173 /* Notes.m */; settings = {ASSET_TAGS = (); }; };
 		FAC95080E1299F0315B3C301 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A3A8C36BAD439F0DCC8BC9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		71A793771BF5CDCA00410FFC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		71A7937A1BF5E75600410FFC /* BmobOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmobOperation.h; sourceTree = "<group>"; };
 		71A7937B1BF5E75600410FFC /* BmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BmobOperation.m; sourceTree = "<group>"; };
+		71BEC27C1BF717190003F173 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
+		71BEC27D1BF717190003F173 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		C6D3406A90F2A54E2CBA0100 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,6 +287,8 @@
 			children = (
 				718FF3A51BF63687009A3F6D /* Constant.h */,
 				718FF3A61BF63687009A3F6D /* Constant.m */,
+				71BEC27C1BF717190003F173 /* Notes.h */,
+				71BEC27D1BF717190003F173 /* Notes.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
 				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,
 				71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */,
+				71BEC27E1BF717190003F173 /* Notes.m in Sources */,
 				71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */,
 				717902F01BF48FC100428756 /* MainViewController.m in Sources */,
 				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,

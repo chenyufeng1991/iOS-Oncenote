@@ -18,6 +18,7 @@
 #import <BmobSDK/Bmob.h>
 #import "AppDelegate.h"
 #import "Notes.h"
+#import "NoteDetailViewController.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -184,7 +185,6 @@
 
 
 #pragma mark - 查询该用户的笔记
-
 - (void) queryNoteByUserId:(NSString*)tableName userId:(NSString*)userId limitCount:(int)limitCount{
   
   BmobQuery *queryNote = [BmobQuery queryWithClassName:tableName];
@@ -201,6 +201,7 @@
         
         if ([(NSString*)[obj objectForKey:@"userId"] isEqualToString:userId]) {
           
+          note.noteId = [obj objectForKey:@"objectId"];
           note.userId = [obj objectForKey:@"userId"];
           note.username = [obj objectForKey:@"username"];
           note.noteTitle = [obj objectForKey:@"noteTitle"];
@@ -214,10 +215,7 @@
       }//for();
     }//else();
     
-    
     NSLog(@"笔记数组的count = %lu",(unsigned long)[self.notesArray count]);
-    
-    
     
     self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, (([self.notesArray count] > 3 ? 3 : [self.notesArray count]) + 1) * 50);
     
@@ -232,6 +230,7 @@
 - (NSMutableArray *)notesArray{
   
   Notes *note = [[Notes alloc] init];
+  note.noteId = @"";
   note.userId = @"";
   note.username = @"";
   note.noteTitle = @"";
@@ -247,7 +246,7 @@
 
 #pragma mark - 获取日期
 - (NSString *)getDateFromString:(NSString*)date{
-
+  
   NSString * str = date;
   NSMutableString * reverseString = [NSMutableString string];
   for(int i = 0 ; i < str.length; i ++){
@@ -256,7 +255,7 @@
     [reverseString appendFormat:@"%c",c];
   }
   str = reverseString;
-  NSLog(@"%@",str);//date已经逆转；
+  //  NSLog(@"%@",str);//date已经逆转；
   
   NSString *b = [str substringFromIndex:8];//截取后8位；
   
@@ -269,9 +268,26 @@
     [reverseString2 appendFormat:@"%c",c];
   }
   str2 = reverseString2;
-  NSLog(@"%@",str2);//date转换完毕
+  //  NSLog(@"%@",str2);//date转换完毕
   
   return str2;
+}
+
+
+#pragma mark - 界面跳转传递数据
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+  
+  if ([segue.identifier isEqualToString:@"NoteDetailSegue"]) {
+    NoteDetailViewController *detail = (NoteDetailViewController*)segue.destinationViewController;
+    NSIndexPath *indePath = self.noteTableView.indexPathForSelectedRow;
+    detail.noteId = [[self.notesArray objectAtIndex:indePath.row] valueForKey:@"noteId"];
+    detail.noteTitle = [[self.notesArray objectAtIndex:indePath.row] valueForKey:@"noteTitle"];
+    detail.noteText = [[self.notesArray objectAtIndex:indePath.row] valueForKey:@"noteText"];
+    
+  }
+  
+  
+  
 }
 
 @end

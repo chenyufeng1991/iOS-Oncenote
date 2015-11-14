@@ -10,5 +10,5 @@
 
 @interface BmobOperation : NSObject
 
-- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId noteTitle:(NSString*)noteTitle noteText:(NSString*)noteText todo:(void(^)(BOOL isSuccessful, NSError *error)) todo;
+- (void)addNoteToNoteTable:(NSString*)tableName userId:(NSString*)userId  username:(NSString*)username  noteTitle:(NSString*)noteTitle noteText:(NSString*)noteText todo:(void(^)(BOOL isSuccessful, NSError *error)) todo;
 @end

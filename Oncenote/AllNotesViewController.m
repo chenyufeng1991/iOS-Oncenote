@@ -12,6 +12,7 @@
 #import <BmobSDK/Bmob.h>
 #import "Constant.h"
 #import "MainViewController.h"
+#import "AllNoteDetailViewController.h"
 
 @interface AllNotesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -106,7 +107,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
   
   if ([segue.identifier isEqualToString:@"NoteDetailSegue"]) {
-    NoteDetailViewController *detail = (NoteDetailViewController*)segue.destinationViewController;
+    AllNoteDetailViewController *detail = (AllNoteDetailViewController*)segue.destinationViewController;
     NSIndexPath *indePath = self.noteTableView.indexPathForSelectedRow;
     detail.noteId = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteId"];
     detail.noteTitle = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteTitle"];

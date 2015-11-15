@@ -308,6 +308,9 @@
     detail.noteTitle = [[self.notesArray objectAtIndex:indePath.row] valueForKey:@"noteTitle"];
     detail.noteText = [[self.notesArray objectAtIndex:indePath.row] valueForKey:@"noteText"];
     
+    
+    detail.indexPath = indePath;
+    
   }
   
   

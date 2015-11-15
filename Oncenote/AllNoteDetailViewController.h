@@ -15,8 +15,6 @@
 @property(nonatomic,copy) NSString *noteText;
 
 
-//存放笔记对象的可变数组；
-
 @property(nonatomic,strong) NSIndexPath *indexPath;
 
 @end

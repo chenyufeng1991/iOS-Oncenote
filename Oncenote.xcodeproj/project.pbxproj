@@ -321,12 +321,12 @@
 				718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */,
 				718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */,
 				717902EE1BF48FC100428756 /* MainViewController.h */,
-				717902EF1BF48FC100428756 /* MainViewController.m */,
 				71BEC27F1BF753080003F173 /* NoteDetailViewController.h */,
-				71BEC2801BF753080003F173 /* NoteDetailViewController.m */,
 				71BEC2821BF76C6F0003F173 /* AllNotesViewController.h */,
+				717902EF1BF48FC100428756 /* MainViewController.m */,
 				71BEC2831BF76C6F0003F173 /* AllNotesViewController.m */,
 				71BEC2851BF8485D0003F173 /* AllNoteDetailViewController.h */,
+				71BEC2801BF753080003F173 /* NoteDetailViewController.m */,
 				71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */,
 			);
 			name = ViewController;

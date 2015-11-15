@@ -31,19 +31,19 @@
   
   
   //控件绑定操作；
-  [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backButtonPressed:)]];
+  [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteDetailBackButtonPressed:)]];
   
 }
 
 
 #pragma mark - 所有的按钮点击操作
-- (void) backButtonPressed:(id)sender{
+- (void) noteDetailBackButtonPressed:(id)sender{
 
-  
-  [self dismissViewControllerAnimated:true completion:^{
-    //
-  }];
-  
+  //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
+  UIViewController *mainViewController = [[UIViewController alloc] init];
+  mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+  [self presentViewController:mainViewController animated:true completion:nil];
+
 }
 
 @end

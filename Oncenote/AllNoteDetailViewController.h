@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface AllNoteDetailViewController : UIViewController
+
 @property(nonatomic,copy) NSString *noteId;
 @property(nonatomic,copy) NSString *noteTitle;
 @property(nonatomic,copy) NSString *noteText;
+
+
+//存放笔记对象的可变数组；
+
+@property(nonatomic,strong) NSIndexPath *indexPath;
 
 @end

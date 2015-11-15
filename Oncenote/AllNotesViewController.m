@@ -15,6 +15,8 @@
 #import "AllNoteDetailViewController.h"
 #import "Notes.h"
 #import "AppDelegate.h"
+#import "AllUtils.h"
+#import "BmobOperation.h"
 
 @interface AllNotesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -58,9 +60,6 @@
   mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
   [self presentViewController:mainViewController animated:true completion:nil];
 
-  
-  
-  
 }
 
 
@@ -98,7 +97,7 @@
   //左滑删除；
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     
-    [self deleteNoteFromDatabase:NOTE_TABLE noteId:[[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteId"]];
+    [BmobOperation deleteNoteFromDatabase:NOTE_TABLE noteId:[[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteId"]];
     
     [self.allNotesArray removeObjectAtIndex:indexPath.row];//从数组中删除该值；
     [self.noteTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -129,24 +128,6 @@
   
 }
 
-
-#pragma mark - 往数据库中删除一条笔记
-- (void)deleteNoteFromDatabase:(NSString*)tableName noteId:(NSString*)noteId{
-  
-  BmobQuery *delete = [BmobQuery queryWithClassName:tableName];
-  [delete getObjectInBackgroundWithId:noteId block:^(BmobObject *object, NSError *error){
-    if (error) {
-      //进行错误处理
-    }
-    else{
-      if (object) {
-        //异步删除object
-        [object deleteInBackground];
-      }
-    }
-  }];
-}
-
 #pragma mark - 查询该用户的笔记
 - (void) queryNoteByUserId:(NSString*)tableName userId:(NSString*)userId limitCount:(int)limitCount{
   
@@ -170,7 +151,7 @@
           note.username = [obj objectForKey:@"username"];
           note.noteTitle = [obj objectForKey:@"noteTitle"];
           note.noteText = [obj objectForKey:@"noteText"];
-          note.noteCreatedAt = [self getDateFromString:[obj objectForKey:@"createdAt"]];
+          note.noteCreatedAt = [AllUtils getDateFromString:[obj objectForKey:@"createdAt"]];
           
           
           [self.allNotesArray addObject:note];
@@ -222,35 +203,6 @@
   }
   
   return _allNotesArray;
-}
-
-#pragma mark - 获取日期
-- (NSString *)getDateFromString:(NSString*)date{
-  
-  NSString * str = date;
-  NSMutableString * reverseString = [NSMutableString string];
-  for(int i = 0 ; i < str.length; i ++){
-    //倒序读取字符并且存到可变数组数组中
-    unichar c = [str characterAtIndex:str.length- i -1];
-    [reverseString appendFormat:@"%c",c];
-  }
-  str = reverseString;
-  //  NSLog(@"%@",str);//date已经逆转；
-  
-  NSString *b = [str substringFromIndex:8];//截取后8位；
-  
-  
-  NSString * str2 = b;
-  NSMutableString * reverseString2 = [NSMutableString string];
-  for(int i = 0 ; i < str2.length; i ++){
-    //倒序读取字符并且存到可变数组数组中
-    unichar c = [str2 characterAtIndex:str2.length- i -1];
-    [reverseString2 appendFormat:@"%c",c];
-  }
-  str2 = reverseString2;
-  //  NSLog(@"%@",str2);//date转换完毕
-  
-  return str2;
 }
 
 @end

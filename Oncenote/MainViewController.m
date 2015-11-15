@@ -230,18 +230,9 @@
         [[self.notesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempTitle forKey:@"noteTitle"];
         [[self.notesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempText forKey:@"noteText"];
         
-        
-        //并且把数组第一个元素和该元素进行替换
-        //        [self.notesArray exchangeObjectAtIndex:0 withObjectAtIndex:self.tempIndexPath.row];//这样是可以的；
-        
-        
         for (int i = (int)self.tempIndexPath.row ; i >= 1; i--) {
           [self.notesArray exchangeObjectAtIndex:i withObjectAtIndex:i-1];//这样是可以的；
-          
-        }
-        
-        
-        
+        }//for()
         
       }
       

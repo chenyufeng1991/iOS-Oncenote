@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="b9I-jw-xEZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="0cU-ec-cGl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="1n1-LI-HG8">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="0cU-ec-cGl" customClass="LaunchScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZZ-BO-T3f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginAppIcon" id="01t-Ju-uys">
+                                <rect key="frame" x="106" y="171" width="108" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.69019607843137254" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJR-RC-sUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="304"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="YGY-iR-8wz">
             <objects>
@@ -86,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcA-gR-ant" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="321"/>
+            <point key="canvasLocation" x="1106" y="-1039"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="bm8-2D-kFC">
@@ -174,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykZ-g7-m5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-861"/>
+            <point key="canvasLocation" x="1118" y="767"/>
         </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="5o2-xh-LTC">
@@ -263,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5G-zj-rea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-166"/>
+            <point key="canvasLocation" x="1118" y="1462"/>
         </scene>
         <!--All Note Detail View Controller-->
         <scene sceneID="LFK-w6-6vn">
@@ -351,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP9-eH-FtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="536"/>
+            <point key="canvasLocation" x="1672" y="2164"/>
         </scene>
         <!--All Notes View Controller-->
         <scene sceneID="BYh-XH-elm">
@@ -463,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgg-zr-TXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="536"/>
+            <point key="canvasLocation" x="1118" y="2164"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Zwz-k8-Xcq">
@@ -555,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn1-Cz-yI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="1023"/>
+            <point key="canvasLocation" x="1106" y="-327"/>
         </scene>
         <!--主界面-->
         <scene sceneID="tne-QT-ifu">
@@ -723,7 +745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-417"/>
+            <point key="canvasLocation" x="664" y="1211"/>
         </scene>
     </scenes>
     <resources>

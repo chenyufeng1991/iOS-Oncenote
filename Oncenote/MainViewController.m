@@ -20,6 +20,7 @@
 #import "Notes.h"
 #import "NoteDetailViewController.h"
 #import "AllNotesViewController.h"
+#import "Constant.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -58,7 +59,7 @@
   [self.textImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textImageButtonPressed:)]];
   
   //查询用户的笔记；
-  [self queryNoteByUserId:@"Note" userId:app.GLOBAL_USERID limitCount:50];
+  [self queryNoteByUserId:NOTE_TABLE userId:app.GLOBAL_USERID limitCount:50];
   
 }
 
@@ -101,7 +102,7 @@
   allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
   
   //传递整个笔记数组；
-  allNotesViewController.allNotesArray = self.notesArray;
+  //  allNotesViewController.allNotesArray = self.notesArray;
   
   
   
@@ -201,6 +202,8 @@
 - (void) queryNoteByUserId:(NSString*)tableName userId:(NSString*)userId limitCount:(int)limitCount{
   
   BmobQuery *queryNote = [BmobQuery queryWithClassName:tableName];
+  //以updatedAt进行降序排列；
+  [queryNote orderByDescending:@"updatedAt"];
   queryNote.limit = limitCount;
   [queryNote findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
     
@@ -220,7 +223,7 @@
           note.noteTitle = [obj objectForKey:@"noteTitle"];
           note.noteText = [obj objectForKey:@"noteText"];
           note.noteCreatedAt = [self getDateFromString:[obj objectForKey:@"createdAt"]];
-
+          
           
           [_notesArray addObject:note];
           

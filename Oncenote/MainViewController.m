@@ -39,6 +39,7 @@
 
 
 
+
 @end
 
 @implementation MainViewController
@@ -89,7 +90,7 @@
 //点击导航栏搜索按钮；
 - (void)naviSearchButtonPressed:(id)sender{
   
-  NSLog(@"点击了搜索按钮");
+  //  NSLog(@"点击了搜索按钮");
   
   
   
@@ -100,12 +101,6 @@
   
   AllNotesViewController *allNotesViewController = [[AllNotesViewController alloc] init];
   allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
-  
-  //传递整个笔记数组；
-  //  allNotesViewController.allNotesArray = self.notesArray;
-  
-  
-  
   
   [self presentViewController:allNotesViewController animated:true completion:nil];
   
@@ -208,9 +203,9 @@
   [queryNote findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
     
     if (error) {
-      NSLog(@"查询笔记错误");
+      //      NSLog(@"查询笔记错误");
     } else {
-      NSLog(@"正在查询笔记。。。");
+      //      NSLog(@"正在查询笔记。。。");
       for (BmobObject *obj in array) {
         
         Notes *note = [[Notes alloc] init];
@@ -224,15 +219,36 @@
           note.noteText = [obj objectForKey:@"noteText"];
           note.noteCreatedAt = [self getDateFromString:[obj objectForKey:@"createdAt"]];
           
-          
           [_notesArray addObject:note];
           
-          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
+          //          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
         }//if();
       }//for();
+      
+      if (self.tempTitle != nil && self.tempText != nil && self.tempIndexPath != nil) {
+        
+        [[self.notesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempTitle forKey:@"noteTitle"];
+        [[self.notesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempText forKey:@"noteText"];
+        
+        
+        //并且把数组第一个元素和该元素进行替换
+        //        [self.notesArray exchangeObjectAtIndex:0 withObjectAtIndex:self.tempIndexPath.row];//这样是可以的；
+        
+        
+        for (int i = (int)self.tempIndexPath.row ; i >= 1; i--) {
+          [self.notesArray exchangeObjectAtIndex:i withObjectAtIndex:i-1];//这样是可以的；
+          
+        }
+        
+        
+        
+        
+      }
+      
+      
     }//else();
     
-    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.notesArray count]);
+    //    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.notesArray count]);
     
     self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, (([self.notesArray count] > 3 ? 3 : [self.notesArray count]) + 1) * 50);
     

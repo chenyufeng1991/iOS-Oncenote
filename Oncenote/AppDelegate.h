@@ -15,5 +15,8 @@
 @property (strong,nonatomic) NSString *GLOBAL_USERID;//全局的objectID;当前的用户ID；
 @property (strong,nonatomic) NSString *GLOBAL_USERNAME;//全局的用户名；
 
+//尝试全局使用一个笔记数组；
+
+
 @end
 

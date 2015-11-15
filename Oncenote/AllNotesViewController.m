@@ -13,8 +13,8 @@
 #import "Constant.h"
 #import "MainViewController.h"
 #import "AllNoteDetailViewController.h"
-#import "AppDelegate.h"
 #import "Notes.h"
+#import "AppDelegate.h"
 
 @interface AllNotesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -24,6 +24,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *noteTableView;
+
 
 
 //存放笔记对象的可变数组；
@@ -39,21 +40,18 @@
   //设置navi中的用户名；
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
   
-  
   //控件绑定操作；
-  [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backButtonPressed:)]];
-  
+  [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allNotesBackButtonPressed:)]];
   
   //查询用户的笔记；
   [self queryNoteByUserId:NOTE_TABLE userId:app.GLOBAL_USERID limitCount:50];
+  
+  NSLog(@"AllNotesViewController---viewDidLoad");
 }
 
 
 #pragma mark - 所有的按钮点击操作
-- (void) backButtonPressed:(id)sender{
-  //  [self dismissViewControllerAnimated:true completion:^{
-  //    //
-  //  }];
+- (void) allNotesBackButtonPressed:(id)sender{
   
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
   UIViewController *mainViewController = [[UIViewController alloc] init];
@@ -125,6 +123,8 @@
     detail.noteTitle = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteTitle"];
     detail.noteText = [[self.allNotesArray objectAtIndex:indePath.row] valueForKey:@"noteText"];
     
+    detail.indexPath = indePath;
+    
   }
   
 }
@@ -156,9 +156,9 @@
   [queryNote findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
     
     if (error) {
-      NSLog(@"查询笔记错误");
+//      NSLog(@"查询笔记错误");
     } else {
-      NSLog(@"正在查询笔记。。。");
+//      NSLog(@"正在查询笔记。。。");
       for (BmobObject *obj in array) {
         
         Notes *note = [[Notes alloc] init];
@@ -173,14 +173,14 @@
           note.noteCreatedAt = [self getDateFromString:[obj objectForKey:@"createdAt"]];
           
           
-          [_allNotesArray addObject:note];
+          [self.allNotesArray addObject:note];
           
-          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
+//          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
         }//if();
       }//for();
     }//else();
     
-    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.allNotesArray count]);
+//    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.allNotesArray count]);
     
     self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, [self.allNotesArray count] * 100);
     

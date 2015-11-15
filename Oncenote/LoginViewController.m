@@ -34,7 +34,7 @@
   [BmobUser loginWithUsernameInBackground:username password:password block:^(BmobUser *user, NSError *error) {
     if (error) {
       //错误处理
-      NSLog(@"登录失败");
+//      NSLog(@"登录失败");
     }else{
       
       //给全局变量设值；
@@ -42,7 +42,7 @@
       globalApp.GLOBAL_USERNAME = username;
       globalApp.GLOBAL_USERID = user.objectId;
       
-      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
+//      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
       UIViewController *mainViewController = [[UIViewController alloc] init];
       mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
       [self presentViewController:mainViewController animated:true completion:nil];

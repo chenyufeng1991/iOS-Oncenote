@@ -72,26 +72,15 @@
   
   
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
-  MainViewController *mainViewController = [[MainViewController alloc] init];
-  mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-  mainViewController.tempIndexPath = self.indexPath;
-  mainViewController.tempTitle = self.noteTitleTextField.text;
-  mainViewController.tempText = self.noteTextTextView.text;
+  AllNotesViewController *allNotesViewController = [[AllNotesViewController alloc] init];
+  allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
+  allNotesViewController.tempIndexPath = self.indexPath;
+  allNotesViewController.tempTitle = self.noteTitleTextField.text;
+  allNotesViewController.tempText = self.noteTextTextView.text;
   
-  [self presentViewController:mainViewController animated:true completion:nil];
+  [self presentViewController:allNotesViewController animated:true completion:nil];
   
   
-}
-
-
-#pragma mark - 弹出提示对话框
-- (void)showPromptDialog:(NSString*)title andMessage:(NSString*)message andButton:(NSString*)buttonTitle andAction:(void (^ __nullable)(UIAlertAction *action)) handler{
-  
-  //尝试使用新的弹出对话框；
-  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-  [alertController addAction:[UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:handler]];
-  //弹出提示框；
-  [self presentViewController:alertController animated:true completion:nil];
 }
 
 

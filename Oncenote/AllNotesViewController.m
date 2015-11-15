@@ -178,6 +178,21 @@
 //          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
         }//if();
       }//for();
+      
+      
+      
+      if (self.tempTitle != nil && self.tempText != nil && self.tempIndexPath != nil) {
+        
+        [[self.allNotesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempTitle forKey:@"noteTitle"];
+        [[self.allNotesArray objectAtIndex:self.tempIndexPath.row] setValue:self.tempText forKey:@"noteText"];
+        
+        for (int i = (int)self.tempIndexPath.row ; i >= 1; i--) {
+          [self.allNotesArray exchangeObjectAtIndex:i withObjectAtIndex:i-1];//这样是可以的；
+        }//for()
+        
+      }
+      
+      
     }//else();
     
 //    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.allNotesArray count]);

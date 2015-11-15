@@ -10,7 +10,6 @@
 
 @interface AllNotesViewController : UIViewController
 
-//存放笔记对象的可变数组；
-@property(nonatomic,strong) NSMutableArray *allNotesArray;
+
 
 @end

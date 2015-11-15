@@ -33,6 +33,7 @@
 		71BEC2811BF753080003F173 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2801BF753080003F173 /* NoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71BEC2841BF76C6F0003F173 /* AllNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2831BF76C6F0003F173 /* AllNotesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71BEC2871BF8485D0003F173 /* AllNoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		71BEC28A1BF8BC100003F173 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FAC95080E1299F0315B3C301 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A3A8C36BAD439F0DCC8BC9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,8 @@
 		71BEC2831BF76C6F0003F173 /* AllNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNotesViewController.m; sourceTree = "<group>"; };
 		71BEC2851BF8485D0003F173 /* AllNoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllNoteDetailViewController.h; sourceTree = "<group>"; };
 		71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNoteDetailViewController.m; sourceTree = "<group>"; };
+		71BEC2881BF8BC100003F173 /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
 		C6D3406A90F2A54E2CBA0100 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,6 +317,8 @@
 		71A7937D1BF5E76800410FFC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				71BEC2881BF8BC100003F173 /* LaunchScreenViewController.h */,
+				71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */,
 				71A793731BF5B5F000410FFC /* LoginViewController.h */,
 				71A793741BF5B5F000410FFC /* LoginViewController.m */,
 				71A793761BF5CDCA00410FFC /* RegisterViewController.h */,
@@ -321,12 +326,12 @@
 				718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */,
 				718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */,
 				717902EE1BF48FC100428756 /* MainViewController.h */,
-				71BEC27F1BF753080003F173 /* NoteDetailViewController.h */,
-				71BEC2821BF76C6F0003F173 /* AllNotesViewController.h */,
 				717902EF1BF48FC100428756 /* MainViewController.m */,
+				71BEC27F1BF753080003F173 /* NoteDetailViewController.h */,
+				71BEC2801BF753080003F173 /* NoteDetailViewController.m */,
+				71BEC2821BF76C6F0003F173 /* AllNotesViewController.h */,
 				71BEC2831BF76C6F0003F173 /* AllNotesViewController.m */,
 				71BEC2851BF8485D0003F173 /* AllNoteDetailViewController.h */,
-				71BEC2801BF753080003F173 /* NoteDetailViewController.m */,
 				71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */,
 			);
 			name = ViewController;
@@ -626,6 +631,7 @@
 				717902ED1BF48FC100428756 /* AppDelegate.m in Sources */,
 				71BEC2871BF8485D0003F173 /* AllNoteDetailViewController.m in Sources */,
 				717902EA1BF48FC100428756 /* main.m in Sources */,
+				71BEC28A1BF8BC100003F173 /* LaunchScreenViewController.m in Sources */,
 				718FF3A71BF63687009A3F6D /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

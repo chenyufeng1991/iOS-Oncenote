@@ -42,6 +42,14 @@
       globalApp.GLOBAL_USERNAME = username;
       globalApp.GLOBAL_USERID = user.objectId;
       
+      
+      //登录成功，同时把用户名密码存储到UserDefault中；
+      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+      [userDefaults setObject:user.objectId forKey:@"userId"];
+      [userDefaults setObject:username forKey:@"username"];
+      [userDefaults setObject:password forKey:@"password"];
+      
+      
 //      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
       UIViewController *mainViewController = [[UIViewController alloc] init];
       mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];

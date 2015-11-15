@@ -34,6 +34,7 @@
 		71BEC2841BF76C6F0003F173 /* AllNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2831BF76C6F0003F173 /* AllNotesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71BEC2871BF8485D0003F173 /* AllNoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71BEC28A1BF8BC100003F173 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */; settings = {ASSET_TAGS = (); }; };
+		71BEC28E1BF8C7830003F173 /* AllUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEC28D1BF8C7830003F173 /* AllUtils.m */; settings = {ASSET_TAGS = (); }; };
 		FAC95080E1299F0315B3C301 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A3A8C36BAD439F0DCC8BC9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,8 @@
 		71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNoteDetailViewController.m; sourceTree = "<group>"; };
 		71BEC2881BF8BC100003F173 /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		71BEC28C1BF8C7830003F173 /* AllUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUtils.h; sourceTree = "<group>"; };
+		71BEC28D1BF8C7830003F173 /* AllUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllUtils.m; sourceTree = "<group>"; };
 		C6D3406A90F2A54E2CBA0100 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +224,7 @@
 		717902E71BF48FC100428756 /* Oncenote */ = {
 			isa = PBXGroup;
 			children = (
+				71BEC28B1BF8C7540003F173 /* Utils */,
 				718FF3A41BF63664009A3F6D /* Model */,
 				71A793801BF5E7AD00410FFC /* Resource */,
 				71A7937F1BF5E79F00410FFC /* View */,
@@ -362,6 +366,15 @@
 				717902F91BF48FC100428756 /* Info.plist */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		71BEC28B1BF8C7540003F173 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				71BEC28C1BF8C7830003F173 /* AllUtils.h */,
+				71BEC28D1BF8C7830003F173 /* AllUtils.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		8B14324862D18D17F50003F0 /* Pods */ = {
@@ -633,6 +646,7 @@
 				717902EA1BF48FC100428756 /* main.m in Sources */,
 				71BEC28A1BF8BC100003F173 /* LaunchScreenViewController.m in Sources */,
 				718FF3A71BF63687009A3F6D /* Constant.m in Sources */,
+				71BEC28E1BF8C7830003F173 /* AllUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

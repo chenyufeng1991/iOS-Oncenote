@@ -41,8 +41,8 @@
   
   if (![noteTitle  isEqual: @""] && ![noteText  isEqual: @""]){
     
-    BmobOperation *operate = [[BmobOperation alloc] init];
-    [operate addNoteToNoteTable:NOTE_TABLE userId:userId  username:username noteTitle:noteTitle noteText:noteText todo:^(BOOL isSuccessful, NSError *error) {
+//    BmobOperation *operate = [[BmobOperation alloc] init];
+    [BmobOperation addNoteToNoteTable:NOTE_TABLE userId:userId  username:username noteTitle:noteTitle noteText:noteText todo:^(BOOL isSuccessful, NSError *error) {
       if (isSuccessful) {
         [self showPromptDialog:@"提示" andMessage:@"增加一条笔记成功" andButton:@"确定" andAction:^(UIAlertAction *action) {
           //跳回到主界面；

@@ -24,6 +24,11 @@
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
 
+
+#import <SMS_SDK/SMSSDK.h>
+#import <SMS_SDK/SMSSDK+AddressBookMethods.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -97,6 +102,10 @@
          break;
      }
    }];
+  
+  
+  
+  [SMSSDK registerApp:@"c5b27554cac0" withSecret:@"e5b73794486527c6af5b82b5bb450300"];
   
   return YES;
 }

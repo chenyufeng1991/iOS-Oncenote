@@ -70,28 +70,22 @@
 #pragma mark - 所有的按钮点击事件
 //点击导航栏左侧的设置按钮；
 - (void)naviSettingButtonPressed:(id)sender{
-  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"这是设置按钮" preferredStyle:  UIAlertControllerStyleAlert];
-  [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //点击按钮的响应事件；
-  }]];
+
+  [AllUtils showPromptDialog:@"提示" andMessage:@"这里是提示信息" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
+    NSLog(@"点击确定按钮");
+  } cancelButton:@"取消" cancelButtonAction:^(UIAlertAction *action) {
+    NSLog(@"点击取消按钮");
+  } contextViewController:self];
   
-  [self presentViewController:alert animated:true completion:nil];
+
 }
 
 - (void)naviRefreshButtonPressed:(id)sender{
-  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"这是刷新按钮" preferredStyle:  UIAlertControllerStyleAlert];
-  [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //点击按钮的响应事件；
-  }]];
-  
-  [self presentViewController:alert animated:true completion:nil];
   
 }
 
 //点击导航栏搜索按钮；
 - (void)naviSearchButtonPressed:(id)sender{
-  
-  //  NSLog(@"点击了搜索按钮");
   
   
   

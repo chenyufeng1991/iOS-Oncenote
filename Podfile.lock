@@ -21,13 +21,26 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - BmobSDK (1.6.5)
+  - ShareSDK3 (3.1.3):
+    - ShareSDK3/libraries (= 3.1.3)
+  - ShareSDK3/libraries (3.1.3)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.1.3)
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.1.3)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.1.3)
+  - ShareSDK3/ShareSDKUI (3.1.3)
 
 DEPENDENCIES:
   - AFNetworking
   - BmobSDK
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BmobSDK: 9928a9135a3a7823c6d8bd2bcd9baffeb8e6289a
+  ShareSDK3: 3e682c2309b955492ac8c0ca5603cb11470fac6f
 
 COCOAPODS: 0.39.0

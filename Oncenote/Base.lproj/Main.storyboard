@@ -496,12 +496,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginAppIcon" id="fQW-cK-jqi">
-                                <rect key="frame" x="115" y="98" width="90" height="81"/>
+                                <rect key="frame" x="115" y="56" width="90" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朝夕笔记" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uBP-Au-ujg">
-                                <rect key="frame" x="97" y="168" width="126" height="41"/>
+                                <rect key="frame" x="97" y="126" width="126" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -509,15 +509,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oncenote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g3w-No-WJS">
-                                <rect key="frame" x="123" y="206" width="75" height="21"/>
+                                <rect key="frame" x="123" y="164" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Oncenote用户名" textAlignment="natural" minimumFontSize="17" id="YBn-64-01r">
-                                <rect key="frame" x="20" y="250" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" id="YBn-64-01r">
+                                <rect key="frame" x="20" y="210" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
@@ -525,7 +525,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" id="YXb-lc-8lx">
-                                <rect key="frame" x="20" y="281" width="280" height="30"/>
+                                <rect key="frame" x="20" y="302" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
@@ -533,7 +533,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击创建账户，表示你同意服务条款和隐私条款" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b30-pd-7hX">
-                                <rect key="frame" x="14" y="319" width="292" height="21"/>
+                                <rect key="frame" x="14" y="371" width="292" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -541,7 +541,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U8g-Ia-ADz">
-                                <rect key="frame" x="39" y="357" width="242" height="39"/>
+                                <rect key="frame" x="39" y="399" width="242" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.89411764709999997" blue="0.78823529410000004" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
@@ -565,6 +565,27 @@
                                     <segue destination="b9I-jw-xEZ" kind="modal" id="pLJ-W5-MAZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" id="ez9-YM-eKQ">
+                                <rect key="frame" x="20" y="256" width="151" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aQK-Dj-BCb">
+                                <rect key="frame" x="179" y="256" width="121" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.89411764709999997" blue="0.78823529410000004" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" red="0.01176470588" green="0.27450980390000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getValidateCodeButtonPressed:" destination="FPm-hS-1Zf" eventType="touchUpInside" id="Jae-B0-wg9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.27058823529411763" green="0.69019607843137254" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
@@ -573,6 +594,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="YXb-lc-8lx" id="45b-h8-RPI"/>
                         <outlet property="usernameTextField" destination="YBn-64-01r" id="egm-4P-dfn"/>
+                        <outlet property="validateCodeTextField" destination="ez9-YM-eKQ" id="mXY-gG-zn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn1-Cz-yI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -715,8 +737,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈宇峰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1I4-yN-02Z">
-                                <rect key="frame" x="54" y="31" width="51" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈宇峰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1I4-yN-02Z">
+                                <rect key="frame" x="54" y="31" width="153" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

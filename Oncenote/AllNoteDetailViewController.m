@@ -13,6 +13,10 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "AllUtils.h"
+
 @interface AllNoteDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
@@ -39,14 +43,54 @@
   
   //控件绑定操作；
   [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allNoteDetailBackButtonPressed:)]];
+  [self.shareImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allNoteDetailShareButtonPressed:)]];
   
 }
 
 
 #pragma mark - 所有的按钮点击操作
 - (void) allNoteDetailBackButtonPressed:(id)sender{
-
+  
   [self updateBmobObject:NOTE_TABLE noteId:self.noteId noteTitle:self.noteTitleTextField.text noteText:self.noteTextTextView.text];
+  
+}
+
+- (void) allNoteDetailShareButtonPressed:(id)sender{
+  
+  NSArray* imageArray = @[[UIImage imageNamed:@"shareImg.png"]];
+  
+  if (imageArray) {
+    
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    [shareParams SSDKSetupShareParamsByText:[NSString  stringWithFormat:@"标题:%@\n内容:%@",self.noteTitleTextField.text,self.noteTextTextView.text]
+                                     images:nil
+                                        url:nil
+                                      title:self.noteTitleTextField.text
+                                       type:SSDKContentTypeAuto];
+    [ShareSDK showShareActionSheet:nil
+                             items:nil
+                       shareParams:shareParams
+               onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+                 
+                 switch (state) {
+                   case SSDKResponseStateSuccess:
+                   {
+                     [AllUtils showPromptDialog:@"提示" andMessage:@"分享成功" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+                     break;
+                   }
+                   case SSDKResponseStateFail:
+                   {
+                     [AllUtils showPromptDialog:@"提示" andMessage:[NSString stringWithFormat:@"分享失败：%@",error] OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+                     break;
+                   }
+                   default:
+                     break;
+                 }
+                 
+               }];
+    
+  }
+  
   
 }
 

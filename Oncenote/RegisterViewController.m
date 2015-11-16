@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "AllUtils.h"
 
 @interface RegisterViewController ()
 
@@ -35,16 +36,20 @@
     [user setPassword:password];
     [user signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
       if (isSuccessful) {
-        NSLog(@"注册成功");
-        [self showPromptDialog:@"提示" andMessage:@"注册成功，请登录" andButton:@"确定" andAction:nil];
+        [AllUtils showPromptDialog:@"提示" andMessage:@"注册成功，请登录！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
+          NSLog(@"注册成功");
+        } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+        
       }else{
-        NSLog(@"注册失败");
-        [self showPromptDialog:@"提示" andMessage:@"服务器异常，注册失败。" andButton:@"确定" andAction:nil];
+        [AllUtils showPromptDialog:@"提示" andMessage:@"服务器异常，注册失败！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
+          NSLog(@"注册失败");
+        } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
       }
     }];
   }else{
-    NSLog(@"请输入信息");
-    [self showPromptDialog:@"提示" andMessage:@"请填写完整信息。" andButton:@"确定" andAction:nil];
+    [AllUtils showPromptDialog:@"提示" andMessage:@"请填写完整信息！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
+      NSLog(@"请输入信息");
+    } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
   }
 }
 
@@ -54,16 +59,6 @@
   [self.usernameTextField resignFirstResponder];
   [self.passwordTextField resignFirstResponder];
   
-}
-
-#pragma mark - 弹出提示对话框
-- (void)showPromptDialog:(NSString*)title andMessage:(NSString*)message andButton:(NSString*)buttonTitle andAction:(void (^ __nullable)(UIAlertAction *action)) handler{
-  
-  //尝试使用新的弹出对话框；
-  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-  [alertController addAction:[UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:handler]];
-  //弹出提示框；
-  [self presentViewController:alertController animated:true completion:nil];
 }
 
 @end

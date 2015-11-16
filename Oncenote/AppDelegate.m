@@ -84,8 +84,8 @@
                                     authType:SSDKAuthTypeBoth];
          break;
        case SSDKPlatformTypeWechat:
-         [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                               appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+         [appInfo SSDKSetupWeChatByAppId:@"wxa7be3ef36352dc5c"
+                               appSecret:@"d4624c36b6795d1d99dcf0547af5443d"];
          break;
        case SSDKPlatformTypeQQ:
          [appInfo SSDKSetupQQByAppId:@"1104897411"

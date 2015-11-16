@@ -57,6 +57,18 @@ install_resource()
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "ShareSDK3/libraries/extends/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "ShareSDK3/libraries/extends/SinaWeiboSDK/WeiboSDK.bundle"
+  install_resource "ShareSDK3/libraries/ShareSDKUI.bundle"
+  install_resource "ShareSDK3/libraries/ShareSDK.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "ShareSDK3/libraries/extends/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "ShareSDK3/libraries/extends/SinaWeiboSDK/WeiboSDK.bundle"
+  install_resource "ShareSDK3/libraries/ShareSDKUI.bundle"
+  install_resource "ShareSDK3/libraries/ShareSDK.bundle"
+fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

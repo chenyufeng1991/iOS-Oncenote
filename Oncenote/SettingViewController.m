@@ -57,9 +57,21 @@
 
   switch (indexPath.row) {
     case 0:{
-      
       [AllUtils jumpToViewController:@"NicknameViewController" contextViewController:self handler:nil];
+    }
+      break;
       
+    case 1:{
+    
+      //从safari打开网页；
+      [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:@"http://oncenote.bmob.cn/"]];
+      
+    }
+      break;
+      
+    case 2:{
+    
+      [AllUtils jumpToViewController:@"AboutAppViewController" contextViewController:self handler:nil];
     }
       break;
       

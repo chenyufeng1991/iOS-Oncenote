@@ -40,6 +40,7 @@
 		719AF3BA1BFB0440009D602D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3B91BFB0440009D602D /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BC1BFB10CD009D602D /* SettingList.m */; settings = {ASSET_TAGS = (); }; };
 		719AF3C01BFB18DE009D602D /* NicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BF1BFB18DE009D602D /* NicknameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		719AF3C31BFB5973009D602D /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3C21BFB5973009D602D /* AboutAppViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -164,6 +165,8 @@
 		719AF3BC1BFB10CD009D602D /* SettingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingList.m; sourceTree = "<group>"; };
 		719AF3BE1BFB18DE009D602D /* NicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicknameViewController.h; sourceTree = "<group>"; };
 		719AF3BF1BFB18DE009D602D /* NicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NicknameViewController.m; sourceTree = "<group>"; };
+		719AF3C11BFB5973009D602D /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAppViewController.h; sourceTree = "<group>"; };
+		719AF3C21BFB5973009D602D /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAppViewController.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 				719AF3B91BFB0440009D602D /* SettingViewController.m */,
 				719AF3BE1BFB18DE009D602D /* NicknameViewController.h */,
 				719AF3BF1BFB18DE009D602D /* NicknameViewController.m */,
+				719AF3C11BFB5973009D602D /* AboutAppViewController.h */,
+				719AF3C21BFB5973009D602D /* AboutAppViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -700,6 +705,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719AF3C31BFB5973009D602D /* AboutAppViewController.m in Sources */,
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
 				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,
 				719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */,

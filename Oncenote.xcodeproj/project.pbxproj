@@ -39,6 +39,7 @@
 		719AF3A91BFA308F009D602D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719AF3A81BFA308F009D602D /* Foundation.framework */; };
 		719AF3BA1BFB0440009D602D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3B91BFB0440009D602D /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BC1BFB10CD009D602D /* SettingList.m */; settings = {ASSET_TAGS = (); }; };
+		719AF3C01BFB18DE009D602D /* NicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BF1BFB18DE009D602D /* NicknameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -161,6 +162,8 @@
 		719AF3B91BFB0440009D602D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		719AF3BB1BFB10CD009D602D /* SettingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingList.h; sourceTree = "<group>"; };
 		719AF3BC1BFB10CD009D602D /* SettingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingList.m; sourceTree = "<group>"; };
+		719AF3BE1BFB18DE009D602D /* NicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicknameViewController.h; sourceTree = "<group>"; };
+		719AF3BF1BFB18DE009D602D /* NicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NicknameViewController.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				71BEC2861BF8485D0003F173 /* AllNoteDetailViewController.m */,
 				719AF3B81BFB0440009D602D /* SettingViewController.h */,
 				719AF3B91BFB0440009D602D /* SettingViewController.m */,
+				719AF3BE1BFB18DE009D602D /* NicknameViewController.h */,
+				719AF3BF1BFB18DE009D602D /* NicknameViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -708,6 +713,7 @@
 				71BEC2871BF8485D0003F173 /* AllNoteDetailViewController.m in Sources */,
 				717902EA1BF48FC100428756 /* main.m in Sources */,
 				71BEC28A1BF8BC100003F173 /* LaunchScreenViewController.m in Sources */,
+				719AF3C01BFB18DE009D602D /* NicknameViewController.m in Sources */,
 				718FF3A71BF63687009A3F6D /* Constant.m in Sources */,
 				71BEC28E1BF8C7830003F173 /* AllUtils.m in Sources */,
 				719AF3BA1BFB0440009D602D /* SettingViewController.m in Sources */,

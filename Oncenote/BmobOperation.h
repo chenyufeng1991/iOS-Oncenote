@@ -14,4 +14,6 @@
 
 
 + (void)deleteNoteFromDatabase:(NSString*)tableName noteId:(NSString*)noteId;
+
++ (void)updateNicknameToUserTable:(NSString*)tableName userId:(NSString*)userId nickname:(NSString*)nickname;
 @end

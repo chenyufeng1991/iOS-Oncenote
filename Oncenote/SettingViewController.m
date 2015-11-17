@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "AllUtils.h"
 #import "SettingList.h"
+#import "NicknameViewController.h"
 
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,7 +29,6 @@
   
   
   self.settingList = [[SettingList alloc] init];
-  
   self.listArray = self.settingList.settingListArray;
   
 }
@@ -45,16 +45,28 @@
   
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell" forIndexPath:indexPath];
-  
-  
   cell.textLabel.text = [self.listArray objectAtIndex:indexPath.row];
-  
-  
-  
-  
   
   return cell;
   
+}
+
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+  switch (indexPath.row) {
+    case 0:{
+    
+      UIViewController *nicknameViewController = [[UIViewController alloc] init];
+      nicknameViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NicknameViewController"];
+      [self presentViewController:nicknameViewController animated:true completion:nil];
+    }
+      break;
+      
+    default:
+      break;
+  }
   
 }
 

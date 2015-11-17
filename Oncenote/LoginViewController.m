@@ -12,11 +12,15 @@
 #import <BmobSDK/Bmob.h>
 #import "AppDelegate.h"
 #import "AllUtils.h"
+#import "Constant.h"
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property(nonatomic,strong) AppDelegate *globalApp;
+@property(nonatomic,strong) NSUserDefaults *userDefaults;
 
 @end
 
@@ -24,6 +28,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.globalApp = [[UIApplication sharedApplication] delegate];
+  self.userDefaults = [NSUserDefaults standardUserDefaults];
   
 }
 
@@ -38,24 +45,43 @@
       [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的手机号和密码" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
       
     }else{
+      //登录成功要进行一次查询，查询出该用户的nickname；
+      
+      BmobQuery *queryNickname = [BmobQuery queryWithClassName:USER_TABLE];
+      [queryNickname getObjectInBackgroundWithId:user.objectId block:^(BmobObject *object, NSError *error) {
+        if (error) {
+          //错误处理；
+        }else{
+          
+          if (object) {
+            NSString *nickname = [object objectForKey:@"nickname"];
+            NSLog(@"1111111111昵称是：%@",nickname);
+            
+            [self.userDefaults setObject:nickname forKey:@"nickname"];
+            self.globalApp.GLOBAL_NICKNAME = nickname;
+            
+            
+            
+            
+            //界面跳转；
+            UIViewController *mainViewController = [[UIViewController alloc] init];
+            mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [self presentViewController:mainViewController animated:true completion:nil];
+          }
+        }
+      }];
       
       //给全局变量设值；
-      AppDelegate *globalApp = [[UIApplication sharedApplication] delegate];
-      globalApp.GLOBAL_USERNAME = username;
-      globalApp.GLOBAL_USERID = user.objectId;
+      self.globalApp.GLOBAL_USERNAME = username;
+      self.globalApp.GLOBAL_USERID = user.objectId;
       
       
       //登录成功，同时把用户名密码存储到UserDefault中；
-      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-      [userDefaults setObject:user.objectId forKey:@"userId"];
-      [userDefaults setObject:username forKey:@"username"];
-      [userDefaults setObject:password forKey:@"password"];
+      [self.userDefaults setObject:user.objectId forKey:@"userId"];
+      [self.userDefaults setObject:username forKey:@"username"];
+      [self.userDefaults setObject:password forKey:@"password"];
       
       
-      //      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
-      UIViewController *mainViewController = [[UIViewController alloc] init];
-      mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-      [self presentViewController:mainViewController animated:true completion:nil];
       
     }
   }];

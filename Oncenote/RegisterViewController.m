@@ -10,6 +10,7 @@
 #import <BmobSDK/Bmob.h>
 #import "AllUtils.h"
 #import "LoginViewController.h"
+#import "Constant.h"
 //15626266152
 //18285115452
 
@@ -21,9 +22,11 @@
 
 @interface RegisterViewController ()
 
+//这里的用户名也就是手机号；
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *validateCodeTextField;
+
 
 @end
 
@@ -31,6 +34,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   
 }
 
@@ -57,7 +61,7 @@
               LoginViewController *loginViewController = [[LoginViewController alloc] init];
               loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
               [self presentViewController:loginViewController animated:true completion:nil];
-            
+              
             } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
             
           }else{
@@ -70,7 +74,7 @@
     }//if();
     
     else{
-      [AllUtils showPromptDialog:@"提示" andMessage:@"验证失败，请输入正确的验证码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+      [AllUtils showPromptDialog:@"提示" andMessage:@"注册失败，请输入正确的手机号和验证码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
     }
   }];
   
@@ -84,24 +88,51 @@
   //如果该手机号已经存在，不能获取验证码。
   //注意：还应该加一个昵称；
   
+  [self isRepeatUsername:USER_TABLE username:self.usernameTextField.text limitCount:50];
   
-  
-  
-  
-  [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.usernameTextField.text
-                                 zone:@"86"
-                     customIdentifier:nil
-                               result:^(NSError *error){
-                                 if (!error){
-                                   [AllUtils showPromptDialog:@"提示" andMessage:@"验证码发送成功，请稍候！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
-                                 }
-                                 else{
-                                   [AllUtils showPromptDialog:@"提示" andMessage:@"验证码发送失败,请填写正确的手机号！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
-                                 }
-                               }];
 }
 
+#pragma mark - 查询该手机号是否已经注册
+- (void)isRepeatUsername:(NSString*)tableName username:(NSString*)username limitCount:(int)limitCount{
+  
+  __block BOOL isRepeatUsername = false;
+  
+  BmobQuery *queryUser = [BmobQuery queryWithClassName:tableName];
+  queryUser.limit = limitCount;
+  [queryUser findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    
+    if (!error) {
+      for (BmobObject *obj in array) {
+        
+        if ([(NSString*)[obj objectForKey:@"username"] isEqualToString:username]) {
+          //表示已经存在该用户名；
+          isRepeatUsername = true;
+          break;
+        }
+      }
+    } else {
+      [AllUtils showPromptDialog:@"提示" andMessage:@"网络异常，请稍候重试！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+    }
+    
+    if (isRepeatUsername) {
+      [AllUtils showPromptDialog:@"提示" andMessage:@"该账户已经存在，请直接登录！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+    }else{
+      //该手机号没有注册，可以获取验证码；
+      [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.usernameTextField.text
+                                     zone:@"86"
+                         customIdentifier:nil
+                                   result:^(NSError *error){
+                                     if (!error){
+                                       [AllUtils showPromptDialog:@"提示" andMessage:@"验证码发送成功，请稍候！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+                                     }
+                                     else{
+                                       [AllUtils showPromptDialog:@"提示" andMessage:@"手机号格式错误，请输入正确的手机号！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+                                     }
+                                   }];
+    }
+  }];
 
+}
 
 
 #pragma mark - 触摸屏幕隐藏键盘
@@ -114,3 +145,15 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+

@@ -254,7 +254,7 @@
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="40P-a1-PyT">
-                                <rect key="frame" x="0.0" y="66" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,6 +303,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwT-xj-IUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760" y="878"/>
+        </scene>
+        <!--Update Password View Controller-->
+        <scene sceneID="4G1-ik-Vna">
+            <objects>
+                <viewController storyboardIdentifier="UpdatePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Feb-9a-9W1" customClass="UpdatePasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h8n-48-cLs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="HpI-3X-rQ5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tsy-Tr-LhS">
+                                        <rect key="frame" x="13" y="25" width="40" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" red="0.0" green="0.52941176469999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="naviCancelButtonPressed:" destination="Feb-9a-9W1" eventType="touchUpInside" id="6MP-g7-NdV"/>
+                                            <action selector="naviCancelButtonPressed:" destination="xNu-qL-Wmw" eventType="touchUpInside" id="FP1-6o-YgM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GWl-5Z-s6C">
+                                        <rect key="frame" x="120" y="29" width="80" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="brO-aF-cb8">
+                                        <rect key="frame" x="264" y="25" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="完成">
+                                            <color key="titleColor" red="0.0" green="0.52941176469999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="naviDoneButtonPressed:" destination="xNu-qL-Wmw" eventType="touchUpInside" id="DYC-2K-yAY"/>
+                                            <action selector="naviDoneButtonPressed:" destination="Feb-9a-9W1" eventType="touchUpInside" id="eZS-zk-Boo"/>
+                                            <action selector="naviLogoutButtonPressed:" destination="uPh-2i-OcR" eventType="touchUpInside" id="09h-rg-poK"/>
+                                            <action selector="naviStoreButtonPressed:" destination="TeH-OH-vUw" eventType="touchUpInside" id="aUy-TX-afL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="afm-js-AeY">
+                                <rect key="frame" x="-326" y="65" width="1000" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入原密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="1m7-3u-APy">
+                                <rect key="frame" x="25" y="100" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入新密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Ak3-18-G9A">
+                                <rect key="frame" x="25" y="148" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.69019607843137254" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="nowPasswordTextField" destination="Ak3-18-G9A" id="V8h-aa-r50"/>
+                        <outlet property="oldPasswordTextField" destination="1m7-3u-APy" id="lXd-r0-mV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tL2-rD-LL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="1266"/>
         </scene>
         <!--About App View Controller-->
         <scene sceneID="70c-Dg-Mpd">
@@ -407,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h39-3o-fRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266" y="1278"/>
+            <point key="canvasLocation" x="2272" y="2050"/>
         </scene>
         <!--Nickname View Controller-->
         <scene sceneID="T6s-sg-zZ9">
@@ -466,7 +553,7 @@
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入你的昵称" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="A2m-Iy-sUK">
-                                <rect key="frame" x="20" y="88" width="280" height="40"/>
+                                <rect key="frame" x="20" y="100" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>

@@ -17,7 +17,7 @@
 {
   self = [super init];
   if (self) {
-    self.settingListArray = [[NSArray alloc] initWithObjects:@"个人资料",@"应用官网",@"关于", nil];
+    self.settingListArray = [[NSArray alloc] initWithObjects:@"个人资料",@"修改密码",@"应用官网",@"关于", nil];
   }
   return self;
 }

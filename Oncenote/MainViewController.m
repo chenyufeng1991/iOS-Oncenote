@@ -52,7 +52,7 @@
   //设置navi中的用户名；
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
   
-  NSLog(@"22222222222222用户的昵称是:%@",app.GLOBAL_NICKNAME);
+//  NSLog(@"22222222222222用户的昵称是:%@",app.GLOBAL_NICKNAME);
   
   if (app.GLOBAL_NICKNAME == nil || [app.GLOBAL_NICKNAME isEqualToString:@""]) {
     self.naviUsername.text = app.GLOBAL_USERNAME;

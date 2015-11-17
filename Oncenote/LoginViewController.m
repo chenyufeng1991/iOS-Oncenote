@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "AppDelegate.h"
+#import "AllUtils.h"
 
 @interface LoginViewController ()
 
@@ -34,7 +35,12 @@
   [BmobUser loginWithUsernameInBackground:username password:password block:^(BmobUser *user, NSError *error) {
     if (error) {
       //错误处理
-//      NSLog(@"登录失败");
+      
+      [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的手机号和密码" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+      
+      
+      
+      
     }else{
       
       //给全局变量设值；
@@ -50,7 +56,7 @@
       [userDefaults setObject:password forKey:@"password"];
       
       
-//      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
+      //      NSLog(@"登录成功，username:%@,password:%@,userId:%@",user.username,user.password,user.objectId);
       UIViewController *mainViewController = [[UIViewController alloc] init];
       mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
       [self presentViewController:mainViewController animated:true completion:nil];

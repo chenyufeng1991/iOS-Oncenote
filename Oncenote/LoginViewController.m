@@ -35,11 +35,7 @@
   [BmobUser loginWithUsernameInBackground:username password:password block:^(BmobUser *user, NSError *error) {
     if (error) {
       //错误处理
-      
       [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的手机号和密码" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
-      
-      
-      
       
     }else{
       

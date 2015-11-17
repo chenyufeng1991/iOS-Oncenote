@@ -22,6 +22,7 @@
 #import "AllNotesViewController.h"
 #import "Constant.h"
 #import "AllUtils.h"
+#import "SettingViewController.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -71,11 +72,10 @@
 //点击导航栏左侧的设置按钮；
 - (void)naviSettingButtonPressed:(id)sender{
 
-  [AllUtils showPromptDialog:@"提示" andMessage:@"这里是提示信息" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
-    NSLog(@"点击确定按钮");
-  } cancelButton:@"取消" cancelButtonAction:^(UIAlertAction *action) {
-    NSLog(@"点击取消按钮");
-  } contextViewController:self];
+
+  UIViewController *settingViewController = [[UIViewController alloc] init];
+  settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+  [self presentViewController:settingViewController animated:true completion:nil];
   
 
 }

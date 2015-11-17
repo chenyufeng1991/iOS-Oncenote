@@ -61,7 +61,15 @@
     }
       break;
       
+      
     case 1:{
+    //修改密码；
+      [AllUtils jumpToViewController:@"UpdatePasswordViewController" contextViewController:self handler:nil];
+      
+    }
+      break;
+      
+    case 2:{
     
       //从safari打开网页；
       [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:@"http://oncenote.bmob.cn/"]];
@@ -69,7 +77,7 @@
     }
       break;
       
-    case 2:{
+    case 3:{
     
       [AllUtils jumpToViewController:@"AboutAppViewController" contextViewController:self handler:nil];
     }

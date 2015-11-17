@@ -58,9 +58,11 @@
             [AllUtils showPromptDialog:@"提示" andMessage:@"注册成功，请登录！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
               
               //注册成功跳转到登录页面；
-              LoginViewController *loginViewController = [[LoginViewController alloc] init];
-              loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-              [self presentViewController:loginViewController animated:true completion:nil];
+              
+              [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
+              
+              
+              
               
             } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
             

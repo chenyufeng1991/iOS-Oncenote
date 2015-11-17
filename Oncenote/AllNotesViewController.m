@@ -56,9 +56,8 @@
 - (void) allNotesBackButtonPressed:(id)sender{
   
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
-  UIViewController *mainViewController = [[UIViewController alloc] init];
-  mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-  [self presentViewController:mainViewController animated:true completion:nil];
+  
+  [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
 
 }
 

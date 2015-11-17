@@ -57,10 +57,9 @@
 
   switch (indexPath.row) {
     case 0:{
-    
-      UIViewController *nicknameViewController = [[UIViewController alloc] init];
-      nicknameViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NicknameViewController"];
-      [self presentViewController:nicknameViewController animated:true completion:nil];
+      
+      [AllUtils jumpToViewController:@"NicknameViewController" contextViewController:self handler:nil];
+      
     }
       break;
       
@@ -75,9 +74,7 @@
 
 - (IBAction)naviCloseButtonPressed:(id)sender {
   
-  UIViewController *mainViewController = [[UIViewController alloc] init];
-  mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-  [self presentViewController:mainViewController animated:true completion:nil];
+  [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
   
   
 }
@@ -93,10 +90,9 @@
     [userDefaults setObject:nil forKey:@"username"];
     [userDefaults setObject:nil forKey:@"password"];
     
-    //同时跳转到登录界面；
-    UIViewController *loginViewController = [[UIViewController alloc] init];
-    loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    [self presentViewController:loginViewController animated:true completion:nil];
+    //同时跳转到登录界面；  
+    
+    [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
     
     
   } cancelButton:@"取消" cancelButtonAction:^(UIAlertAction *action) {

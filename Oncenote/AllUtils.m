@@ -60,6 +60,19 @@
   return alertController;
 }
 
+
+
+#pragma mark - 界面跳转封装
+//该方法的界面跳转不能传递数据；
++ (void)jumpToViewController:(NSString*)viewControllerIdentifier contextViewController:(UIViewController*)contextViewController handler:(void (^)(void))handler{
+
+  UIViewController *viewController = [[UIViewController alloc] init];
+  viewController = [contextViewController.storyboard instantiateViewControllerWithIdentifier:viewControllerIdentifier];
+  [contextViewController presentViewController:viewController animated:true completion:handler];
+  
+  
+}
+
 @end
 
 

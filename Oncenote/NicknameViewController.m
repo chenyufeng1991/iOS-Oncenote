@@ -41,10 +41,9 @@
 }
 
 - (IBAction)naviCancelButtonPressed:(id)sender {
+
   
-  UIViewController *settingViewController = [[UIViewController alloc] init];
-  settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
-  [self presentViewController:settingViewController animated:true completion:nil];
+  [AllUtils jumpToViewController:@"SettingViewController" contextViewController:self handler:nil];
   
 }
 
@@ -62,9 +61,8 @@
   
   
   [AllUtils showPromptDialog:@"提示" andMessage:@"修改昵称成功" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
-    UIViewController *settingViewController = [[UIViewController alloc] init];
-    settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
-    [self presentViewController:settingViewController animated:true completion:nil];
+        
+    [AllUtils jumpToViewController:@"SettingViewController" contextViewController:self handler:nil];
     
   } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
   

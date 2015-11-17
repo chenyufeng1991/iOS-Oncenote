@@ -49,9 +49,10 @@
         
         [AllUtils showPromptDialog:@"提示" andMessage:@"增加一条笔记成功" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
           //跳回到主界面；
-          UIViewController *mainViewController = [[UIViewController alloc] init];
-          mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-          [self presentViewController:mainViewController animated:true completion:nil];
+          
+          [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
+          
+          
           NSLog(@"回到主界面");
         } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
         

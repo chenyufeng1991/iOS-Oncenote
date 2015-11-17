@@ -80,9 +80,8 @@
 - (void)naviSettingButtonPressed:(id)sender{
 
 
-  UIViewController *settingViewController = [[UIViewController alloc] init];
-  settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
-  [self presentViewController:settingViewController animated:true completion:nil];
+  
+  [AllUtils jumpToViewController:@"SettingViewController" contextViewController:self handler:nil];
   
 
 }
@@ -101,20 +100,19 @@
 //点击Header,跳转到所有笔记页面；
 - (void)noteHeaderPressed:(id)sender{
   
-  AllNotesViewController *allNotesViewController = [[AllNotesViewController alloc] init];
-  allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
+
   
-  [self presentViewController:allNotesViewController animated:true completion:nil];
+  [AllUtils jumpToViewController:@"AllNotesViewController" contextViewController:self handler:nil];
+  
+  
+  
   
 }
 
 //跳转到新增笔记的页面-->AddNoteViewController;
 - (void)textImageButtonPressed:(id)sender{
-  UIViewController *addNoteViewController = [[UIViewController alloc] init];
-  addNoteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddNoteViewController"];
-  [self presentViewController:addNoteViewController animated:true completion:^{
-    //todo;
-  }];
+
+  [AllUtils jumpToViewController:@"AddNoteViewController" contextViewController:self handler:nil];
   
 }
 

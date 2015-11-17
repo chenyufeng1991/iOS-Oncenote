@@ -10,14 +10,14 @@
 #import "MainViewController.h"
 #import "LoginViewController.h"
 #import "AllUtils.h"
+#import "SettingList.h"
 
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
-
-
-
+@property(nonatomic,strong) SettingList *settingList;
+@property(nonatomic,strong) NSArray *listArray;
 
 @end
 
@@ -26,19 +26,36 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  
+  self.settingList = [[SettingList alloc] init];
+  
+  self.listArray = self.settingList.settingListArray;
+  
 }
 
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
   
-  return 5;
+  return [self.listArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
-  return nil;
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell" forIndexPath:indexPath];
+  
+  
+  cell.textLabel.text = [self.listArray objectAtIndex:indexPath.row];
+  
+  
+  
+  
+  
+  return cell;
+  
+  
 }
 
 

@@ -38,6 +38,7 @@
 		719AF3A71BFA3081009D602D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719AF3A61BFA3081009D602D /* UIKit.framework */; };
 		719AF3A91BFA308F009D602D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719AF3A81BFA308F009D602D /* Foundation.framework */; };
 		719AF3BA1BFB0440009D602D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3B91BFB0440009D602D /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BC1BFB10CD009D602D /* SettingList.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -158,6 +159,8 @@
 		719AF3A81BFA308F009D602D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		719AF3B81BFB0440009D602D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		719AF3B91BFB0440009D602D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		719AF3BB1BFB10CD009D602D /* SettingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingList.h; sourceTree = "<group>"; };
+		719AF3BC1BFB10CD009D602D /* SettingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingList.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				718FF3A61BF63687009A3F6D /* Constant.m */,
 				71BEC27C1BF717190003F173 /* Notes.h */,
 				71BEC27D1BF717190003F173 /* Notes.m */,
+				719AF3BB1BFB10CD009D602D /* SettingList.h */,
+				719AF3BC1BFB10CD009D602D /* SettingList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 			files = (
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
 				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,
+				719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */,
 				71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */,
 				71BEC27E1BF717190003F173 /* Notes.m in Sources */,
 				71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */,

@@ -47,8 +47,6 @@
   
   //查询用户的笔记；
   [self queryNoteByUserId:NOTE_TABLE userId:app.GLOBAL_USERID limitCount:50];
-  
-  NSLog(@"AllNotesViewController---viewDidLoad");
 }
 
 
@@ -96,19 +94,29 @@
   //左滑删除；
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     
+    //数据库删除；
     [BmobOperation deleteNoteFromDatabase:NOTE_TABLE noteId:[[self.allNotesArray objectAtIndex:indexPath.row] valueForKey:@"noteId"]];
     
     [self.allNotesArray removeObjectAtIndex:indexPath.row];//从数组中删除该值；
     [self.noteTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
-    //数据库删除；
+    
+    //////
+    if (100 * [self.allNotesArray count] < [UIScreen mainScreen].bounds.size.height) {
+      self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, 100 * [self.allNotesArray count]);
+    }else{
+      self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, [UIScreen mainScreen].bounds.size.height - 65);
+    }
     
   }
   
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+  return 100;
+}
 
 
 #pragma mark - 界面跳转传递数据
@@ -154,12 +162,9 @@
           
           
           [self.allNotesArray addObject:note];
-          
-//          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
+      
         }//if();
       }//for();
-      
-      
       
       if (self.tempTitle != nil && self.tempText != nil && self.tempIndexPath != nil) {
         
@@ -175,9 +180,15 @@
       
     }//else();
     
-//    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.allNotesArray count]);
+    NSLog(@"笔记数组的count = %lu",(unsigned long)[self.allNotesArray count]);
     
-    self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, [self.allNotesArray count] * 100);
+    //解决TableView不能滚到最下面的bug；注意如何设置TableView的长度；
+    if (100 * [self.allNotesArray count] < [UIScreen mainScreen].bounds.size.height) {
+      self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, 100 * [self.allNotesArray count]);
+    }else{
+      self.noteTableView.frame = CGRectMake(self.noteTableView.frame.origin.x, self.noteTableView.frame.origin.y, self.noteTableView.frame.size.width, [UIScreen mainScreen].bounds.size.height - 65);
+    }
+    
     
     [self.noteTableView reloadData];
     

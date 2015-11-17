@@ -36,6 +36,7 @@
     AppDelegate *globalApp = [[UIApplication sharedApplication] delegate];
     globalApp.GLOBAL_USERNAME = [userDefaults objectForKey:@"username"];
     globalApp.GLOBAL_USERID = [userDefaults objectForKey:@"userId"];
+    globalApp.GLOBAL_NICKNAME = [userDefaults objectForKey:@"nickname"];
     
     
     UIViewController *mainViewController = [[UIViewController alloc] init];

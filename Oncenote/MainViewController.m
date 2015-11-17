@@ -51,7 +51,14 @@
   
   //设置navi中的用户名；
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
-  self.naviUsername.text = app.GLOBAL_USERNAME;
+  
+  NSLog(@"22222222222222用户的昵称是:%@",app.GLOBAL_NICKNAME);
+  
+  if (app.GLOBAL_NICKNAME == nil || [app.GLOBAL_NICKNAME isEqualToString:@""]) {
+    self.naviUsername.text = app.GLOBAL_USERNAME;
+  } else {
+    self.naviUsername.text = app.GLOBAL_NICKNAME;
+  }
   
   //绑定控件；
   [self.naviSettingImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(naviSettingButtonPressed:)]];

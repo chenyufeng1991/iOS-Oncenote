@@ -60,13 +60,11 @@
             [self.userDefaults setObject:nickname forKey:@"nickname"];
             self.globalApp.GLOBAL_NICKNAME = nickname;
             
-            
-            
-            
             //界面跳转；
-            UIViewController *mainViewController = [[UIViewController alloc] init];
-            mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [self presentViewController:mainViewController animated:true completion:nil];
+            
+            [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
+            
+            
           }
         }
       }];

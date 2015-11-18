@@ -54,7 +54,7 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+  
   switch (indexPath.row) {
     case 0:{
       [AllUtils jumpToViewController:@"NicknameViewController" contextViewController:self handler:nil];
@@ -63,14 +63,14 @@
       
       
     case 1:{
-    //修改密码；
+      //修改密码；
       [AllUtils jumpToViewController:@"UpdatePasswordViewController" contextViewController:self handler:nil];
       
     }
       break;
       
     case 2:{
-    
+      
       //从safari打开网页；
       [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:@"http://oncenote.bmob.cn/"]];
       
@@ -78,7 +78,7 @@
       break;
       
     case 3:{
-    
+      
       [AllUtils jumpToViewController:@"AboutAppViewController" contextViewController:self handler:nil];
     }
       break;
@@ -108,9 +108,12 @@
     //把用户名和密码设为nil；
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:nil forKey:@"username"];
-    [userDefaults setObject:nil forKey:@"password"];
+    [userDefaults setObject:nil forKey:@"Password"];
+    [userDefaults setObject:nil forKey:@"nickname"];
+    [userDefaults setObject:nil forKey:@"userId"];
     
-    //同时跳转到登录界面；  
+    
+    //同时跳转到登录界面；
     
     [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
     
@@ -118,18 +121,6 @@
   } cancelButton:@"取消" cancelButtonAction:^(UIAlertAction *action) {
     
   } contextViewController:self];
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 }
 

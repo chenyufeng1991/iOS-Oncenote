@@ -43,21 +43,21 @@
 }
 
 #pragma mark - 修改用户的昵称
-+ (void)updateNicknameToUserTable:(NSString*)tableName userId:(NSString*)userId nickname:(NSString*)nickname{
-
-  BmobQuery *update = [BmobQuery queryWithClassName:tableName];
-  [update getObjectInBackgroundWithId:userId block:^(BmobObject *object,NSError *error){
-    if (!error) {
-      if (object) {
-        [object setObject:nickname forKey:@"nickname"];
-      
-        [object updateInBackground];
-      }
-    }else{
-      //进行错误处理
-    }
-  }];
-}
+//+ (void)updateNicknameToUserTable:(NSString*)tableName userId:(NSString*)userId nickname:(NSString*)nickname{
+//
+//  BmobQuery *update = [BmobQuery queryWithClassName:tableName];
+//  [update getObjectInBackgroundWithId:userId block:^(BmobObject *object,NSError *error){
+//    if (!error) {
+//      if (object) {
+//        [object setObject:nickname forKey:@"nickname"];
+//      
+//        [object updateInBackground];
+//      }
+//    }else{
+//      //进行错误处理
+//    }
+//  }];
+//}
 
 
 

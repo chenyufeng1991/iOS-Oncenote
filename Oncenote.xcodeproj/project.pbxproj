@@ -42,6 +42,7 @@
 		719AF3C01BFB18DE009D602D /* NicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3BF1BFB18DE009D602D /* NicknameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		719AF3C31BFB5973009D602D /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3C21BFB5973009D602D /* AboutAppViewController.m */; settings = {ASSET_TAGS = (); }; };
 		719AF3C61BFB5E21009D602D /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3C51BFB5E21009D602D /* UpdatePasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
+		719AF3C91BFC4CB3009D602D /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719AF3C81BFC4CB3009D602D /* ForgetPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793751BF5B5F000410FFC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793741BF5B5F000410FFC /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A793771BF5CDCA00410FFC /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		71A7937C1BF5E75600410FFC /* BmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A7937B1BF5E75600410FFC /* BmobOperation.m */; settings = {ASSET_TAGS = (); }; };
@@ -170,6 +171,8 @@
 		719AF3C21BFB5973009D602D /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAppViewController.m; sourceTree = "<group>"; };
 		719AF3C41BFB5E21009D602D /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		719AF3C51BFB5E21009D602D /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
+		719AF3C71BFC4CB3009D602D /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		719AF3C81BFC4CB3009D602D /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		71A793731BF5B5F000410FFC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71A793741BF5B5F000410FFC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71A793761BF5CDCA00410FFC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -392,10 +395,12 @@
 				71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */,
 				71A793731BF5B5F000410FFC /* LoginViewController.h */,
 				71A793741BF5B5F000410FFC /* LoginViewController.m */,
+				717902EF1BF48FC100428756 /* MainViewController.m */,
+				719AF3C71BFC4CB3009D602D /* ForgetPasswordViewController.h */,
+				719AF3C81BFC4CB3009D602D /* ForgetPasswordViewController.m */,
 				71A793761BF5CDCA00410FFC /* RegisterViewController.h */,
 				71A793771BF5CDCA00410FFC /* RegisterViewController.m */,
 				717902EE1BF48FC100428756 /* MainViewController.h */,
-				717902EF1BF48FC100428756 /* MainViewController.m */,
 				718FF3A11BF623B7009A3F6D /* AddNoteViewController.h */,
 				718FF3A21BF623B7009A3F6D /* AddNoteViewController.m */,
 				71BEC27F1BF753080003F173 /* NoteDetailViewController.h */,
@@ -712,6 +717,7 @@
 			files = (
 				719AF3C31BFB5973009D602D /* AboutAppViewController.m in Sources */,
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
+				719AF3C91BFC4CB3009D602D /* ForgetPasswordViewController.m in Sources */,
 				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,
 				719AF3BD1BFB10CD009D602D /* SettingList.m in Sources */,
 				719AF3C61BFB5E21009D602D /* UpdatePasswordViewController.m in Sources */,

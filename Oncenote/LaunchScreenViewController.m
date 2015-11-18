@@ -28,7 +28,7 @@
   [super viewDidAppear:animated];
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
-  if ([userDefaults objectForKey:@"username"] != nil && [userDefaults objectForKey:@"password"] != nil ) {
+  if ([userDefaults objectForKey:@"username"] != nil && [userDefaults objectForKey:@"Password"] != nil ) {
     //直接跳到主界面；
     NSLog(@"直接跳到主界面");
     
@@ -36,16 +36,13 @@
     globalApp.GLOBAL_USERNAME = [userDefaults objectForKey:@"username"];
     globalApp.GLOBAL_USERID = [userDefaults objectForKey:@"userId"];
     globalApp.GLOBAL_NICKNAME = [userDefaults objectForKey:@"nickname"];
-    
+    globalApp.GLOBAL_PASSWORD = [userDefaults objectForKey:@"Password"];
     
     [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
-    
-    
     
   }else{
     NSLog(@"跳到登录界面");
     //跳到登录界面；
-    
     [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
     
   }

@@ -53,6 +53,10 @@
         BmobUser *user = [[BmobUser alloc]init];
         [user setUsername:username];
         [user setPassword:password];
+        
+        //同时把这个密码存储到另一个字段“Password”中。//////////////////////////////////////////////////////////
+        [user setObject:password forKey:@"Password"];
+        
         [user signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
           if (isSuccessful) {
             [AllUtils showPromptDialog:@"提示" andMessage:@"注册成功，请登录！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
@@ -60,9 +64,6 @@
               //注册成功跳转到登录页面；
               
               [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
-              
-              
-              
               
             } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
             
@@ -93,6 +94,17 @@
   [self isRepeatUsername:USER_TABLE username:self.usernameTextField.text limitCount:50];
   
 }
+
+
+
+- (IBAction)loginButtonPressed:(id)sender {
+  
+  [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
+  
+}
+
+
+
 
 #pragma mark - 查询该手机号是否已经注册
 - (void)isRepeatUsername:(NSString*)tableName username:(NSString*)username limitCount:(int)limitCount{

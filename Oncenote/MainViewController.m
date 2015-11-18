@@ -52,7 +52,7 @@
   //设置navi中的用户名；
   AppDelegate *app = [[UIApplication sharedApplication] delegate];
   
-//  NSLog(@"22222222222222用户的昵称是:%@",app.GLOBAL_NICKNAME);
+  //  NSLog(@"22222222222222用户的昵称是:%@",app.GLOBAL_NICKNAME);
   
   if (app.GLOBAL_NICKNAME == nil || [app.GLOBAL_NICKNAME isEqualToString:@""]) {
     self.naviUsername.text = app.GLOBAL_USERNAME;
@@ -78,12 +78,12 @@
 #pragma mark - 所有的按钮点击事件
 //点击导航栏左侧的设置按钮；
 - (void)naviSettingButtonPressed:(id)sender{
-
-
+  
+  
   
   [AllUtils jumpToViewController:@"SettingViewController" contextViewController:self handler:nil];
   
-
+  
 }
 
 - (void)naviRefreshButtonPressed:(id)sender{
@@ -100,7 +100,7 @@
 //点击Header,跳转到所有笔记页面；
 - (void)noteHeaderPressed:(id)sender{
   
-
+  
   
   [AllUtils jumpToViewController:@"AllNotesViewController" contextViewController:self handler:nil];
   
@@ -111,7 +111,7 @@
 
 //跳转到新增笔记的页面-->AddNoteViewController;
 - (void)textImageButtonPressed:(id)sender{
-
+  
   [AllUtils jumpToViewController:@"AddNoteViewController" contextViewController:self handler:nil];
   
 }
@@ -221,7 +221,6 @@
           
           [_notesArray addObject:note];
           
-          //          NSLog(@"输入的用户Id：%@,返回的用户Id：%@,标题：%@,笔记内容：%@",userId,[obj objectForKey:@"userId"],[obj objectForKey:@"noteTitle"],[obj objectForKey:@"noteText"]);
         }//if();
       }//for();
       

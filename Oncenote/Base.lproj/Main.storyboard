@@ -83,6 +83,9 @@
                                 <state key="normal" title="忘记密码">
                                     <color key="titleColor" red="0.011764705882352941" green="0.27450980392156865" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="forgetPasswordButtonPressed:" destination="b9I-jw-xEZ" eventType="touchUpInside" id="YYj-u6-aRP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="awM-KE-PS1">
                                 <rect key="frame" x="102" y="518" width="117" height="30"/>
@@ -93,7 +96,7 @@
                                     <color key="titleColor" red="0.67450980392156867" green="0.94117647058823528" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FPm-hS-1Zf" kind="modal" id="46d-mX-OvT"/>
+                                    <action selector="createAccountButtonPressed:" destination="b9I-jw-xEZ" eventType="touchUpInside" id="f5P-mE-TDv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,6 +112,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcA-gR-ant" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="-1039"/>
+        </scene>
+        <!--Forget Password View Controller-->
+        <scene sceneID="LxM-of-PV3">
+            <objects>
+                <viewController storyboardIdentifier="ForgetPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ewE-p5-DDy" customClass="ForgetPasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F7s-Xn-sTK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入注册时的手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="9id-Va-CrL">
+                                <rect key="frame" x="17" y="57" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入你的新密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="kW0-rq-BaZ">
+                                <rect key="frame" x="17" y="149" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1W1-Dh-Hzt">
+                                <rect key="frame" x="36" y="211" width="242" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.89411764709999997" blue="0.78823529410000004" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="重设密码">
+                                    <color key="titleColor" red="0.01176470588" green="0.27450980390000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resettingPasswordButtonPressed:" destination="ewE-p5-DDy" eventType="touchUpInside" id="HWl-Js-Vfu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bIn-TC-ZHv">
+                                <rect key="frame" x="176" y="103" width="121" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.89411764709999997" blue="0.78823529410000004" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" red="0.01176470588" green="0.27450980390000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getValidateCodeButtonPressed:" destination="ewE-p5-DDy" eventType="touchUpInside" id="b8U-Jm-QNQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0d6-5k-g6w">
+                                <rect key="frame" x="99" y="517" width="117" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="或者，登录">
+                                    <color key="titleColor" red="0.67450980390000004" green="0.94117647059999998" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="ewE-p5-DDy" eventType="touchUpInside" id="c63-ml-2L2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="FLP-z9-6Xf">
+                                <rect key="frame" x="17" y="103" width="151" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.76078431369999999" blue="0.47843137250000001" alpha="0.80133551520000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.69019607843137254" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="nowPasswordTextField" destination="kW0-rq-BaZ" id="DCr-sj-SmG"/>
+                        <outlet property="phoneTextField" destination="9id-Va-CrL" id="6Ab-NP-ViZ"/>
+                        <outlet property="validateCodeTextField" destination="FLP-z9-6Xf" id="Ea8-pD-wVX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tQ-b8-0yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1586" y="-1034"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="bm8-2D-kFC">
@@ -928,7 +1015,7 @@
                                     <color key="titleColor" red="0.67450980390000004" green="0.94117647059999998" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="b9I-jw-xEZ" kind="modal" id="pLJ-W5-MAZ"/>
+                                    <action selector="loginButtonPressed:" destination="FPm-hS-1Zf" eventType="touchUpInside" id="SCv-ct-85a"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="ez9-YM-eKQ">

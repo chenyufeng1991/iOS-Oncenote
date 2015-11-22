@@ -24,7 +24,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJR-RC-sUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="304"/>
+            <point key="canvasLocation" x="-328" y="312"/>
+        </scene>
+        <!--Guide Page View Controller-->
+        <scene sceneID="30T-uJ-1X2">
+            <objects>
+                <viewController storyboardIdentifier="GuidePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QrW-en-pfa" customClass="GuidePageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hiu-ti-Dpg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="I4B-ec-rPI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="QrW-en-pfa" id="dOI-tV-HtQ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="guidepageScrollView" destination="I4B-ec-rPI" id="KKO-3j-VHL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyP-vV-T6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="316"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YGY-iR-8wz">

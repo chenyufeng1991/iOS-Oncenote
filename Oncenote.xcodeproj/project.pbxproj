@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714257D61C01E2330070DF76 /* GuidePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714257D51C01E2330070DF76 /* GuidePageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		715CB76D1BF99B1A0079DB35 /* shareImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 715CB76C1BF99B1A0079DB35 /* shareImg.png */; settings = {ASSET_TAGS = (); }; };
 		717902EA1BF48FC100428756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902E91BF48FC100428756 /* main.m */; };
 		717902ED1BF48FC100428756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717902EC1BF48FC100428756 /* AppDelegate.m */; };
@@ -114,6 +115,8 @@
 /* Begin PBXFileReference section */
 		042E519FF0D448E00C6B94EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		52A3A8C36BAD439F0DCC8BC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		714257D41C01E2330070DF76 /* GuidePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidePageViewController.h; sourceTree = "<group>"; };
+		714257D51C01E2330070DF76 /* GuidePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidePageViewController.m; sourceTree = "<group>"; };
 		715CB76C1BF99B1A0079DB35 /* shareImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareImg.png; sourceTree = "<group>"; };
 		717902E51BF48FC100428756 /* Oncenote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oncenote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		717902E91BF48FC100428756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 			children = (
 				71BEC2881BF8BC100003F173 /* LaunchScreenViewController.h */,
 				71BEC2891BF8BC100003F173 /* LaunchScreenViewController.m */,
+				714257D41C01E2330070DF76 /* GuidePageViewController.h */,
+				714257D51C01E2330070DF76 /* GuidePageViewController.m */,
 				71A793731BF5B5F000410FFC /* LoginViewController.h */,
 				71A793741BF5B5F000410FFC /* LoginViewController.m */,
 				717902EF1BF48FC100428756 /* MainViewController.m */,
@@ -716,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719AF3C31BFB5973009D602D /* AboutAppViewController.m in Sources */,
+				714257D61C01E2330070DF76 /* GuidePageViewController.m in Sources */,
 				71A793781BF5CDCA00410FFC /* RegisterViewController.m in Sources */,
 				719AF3C91BFC4CB3009D602D /* ForgetPasswordViewController.m in Sources */,
 				718FF3A31BF623B7009A3F6D /* AddNoteViewController.m in Sources */,

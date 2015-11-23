@@ -11,6 +11,7 @@
 #import "AllUtils.h"
 
 #define UISCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define UISCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
 @interface GuidePageViewController ()<UIScrollViewDelegate,UIPageViewControllerDelegate>
 
@@ -72,14 +73,14 @@
   [view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"guidepage0.png"]]];
   
   
-  UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake((UISCREEN_WIDTH - 200) / 3, 400, 100, 30)];
+  UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake((UISCREEN_WIDTH - 200) / 3, UISCREEN_HEIGHT - 100, 100, 30)];
   [loginButton setTitle:@"登录" forState:UIControlStateNormal];
   [loginButton.layer setBorderColor:[UIColor whiteColor].CGColor];
   [loginButton.layer setBorderWidth:0.5];
   [loginButton.layer setMasksToBounds:true];
   [loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
   
-  UIButton *registerButton = [[UIButton alloc] initWithFrame:CGRectMake((UISCREEN_WIDTH - 200) / 3 + (UISCREEN_WIDTH - 200) / 3 + 100, 400, 100, 30)];
+  UIButton *registerButton = [[UIButton alloc] initWithFrame:CGRectMake((UISCREEN_WIDTH - 200) / 3 + (UISCREEN_WIDTH - 200) / 3 + 100, UISCREEN_HEIGHT - 100, 100, 30)];
   [registerButton setTitle:@"注册" forState:UIControlStateNormal];
   [registerButton.layer setBorderColor:[UIColor whiteColor].CGColor];
   [registerButton.layer setBorderWidth:0.5];

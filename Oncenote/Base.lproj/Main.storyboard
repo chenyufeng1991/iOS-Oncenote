@@ -1031,7 +1031,7 @@
                                     <color key="titleColor" red="0.01176470588" green="0.27450980390000002" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAccountButtonPressed:" destination="FPm-hS-1Zf" eventType="touchUpInside" id="C0P-Eb-mYn"/>
+                                    <action selector="createAccountButtonPressed2:" destination="FPm-hS-1Zf" eventType="touchUpInside" id="Mdw-7m-TKw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7t-gY-L2f">

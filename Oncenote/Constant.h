@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define USER_TABLE @"_User"
+#define USER_TABLE @"User"
 #define NOTE_TABLE @"Note"
 
 @interface Constant : NSObject

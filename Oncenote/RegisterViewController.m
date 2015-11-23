@@ -40,7 +40,9 @@
 
 #pragma mark - 所有按钮的点击操作；
 //创建账号；
-- (IBAction)createAccountButtonPressed:(id)sender {
+//重写注册的方法，不使用默认的_User表，而使用自己建的User表；
+- (IBAction)createAccountButtonPressed2:(id)sender{
+  
   //首先判断有没有验证成功；
   [SMSSDK commitVerificationCode:self.validateCodeTextField.text phoneNumber:self.usernameTextField.text zone:@"86" result:^(NSError *error) {
     
@@ -50,38 +52,47 @@
       
       if (![username  isEqual: @""] && ![password  isEqual: @""]) {
         //用户名密码同时不为空，才可以进行注册；
-        BmobUser *user = [[BmobUser alloc]init];
-        [user setUsername:username];
-        [user setPassword:password];
         
-        //同时把这个密码存储到另一个字段“Password”中。//////////////////////////////////////////////////////////
-        [user setObject:password forKey:@"Password"];
-        
-        [user signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
+        //向User表中插入一条用户信息；
+        BmobObject *createAccount = [BmobObject objectWithClassName:USER_TABLE];
+        [createAccount setObject:username forKey:@"username"];
+        [createAccount setObject:password forKey:@"Password"];
+        [createAccount saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+          
           if (isSuccessful) {
+            
             [AllUtils showPromptDialog:@"提示" andMessage:@"注册成功，请登录！" OKButton:@"确定" OKButtonAction:^(UIAlertAction *action) {
-              
-              //注册成功跳转到登录页面；
               
               [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
               
             } cancelButton:@"" cancelButtonAction:nil contextViewController:self];
             
-          }else{
-            [AllUtils showPromptDialog:@"提示" andMessage:@"网络异常，注册失败！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+          } else {
+            [AllUtils showPromptDialog:@"提示" andMessage:@"服务器异常，注册失败，请稍候再试！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
           }
+          
         }];
+        
       }else{
         [AllUtils showPromptDialog:@"提示" andMessage:@"请填写完整信息！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
       }
     }//if();
     
     else{
-      [AllUtils showPromptDialog:@"提示" andMessage:@"注册失败，请输入正确的手机号和验证码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+      [AllUtils showPromptDialog:@"提示" andMessage:@"验证失败，请重新获取验证码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
     }
   }];
   
+  
+  
 }
+
+
+
+
+
+
+
 
 //获取验证码；
 - (IBAction)getValidateCodeButtonPressed:(id)sender {
@@ -145,7 +156,7 @@
                                    }];
     }
   }];
-
+  
 }
 
 

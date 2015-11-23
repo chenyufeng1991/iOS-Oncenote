@@ -43,6 +43,9 @@
   BmobQuery *query = [BmobQuery queryWithClassName:USER_TABLE];
   [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
     if (!error) {
+      
+      BOOL isSuccessful = false;
+      
       for (BmobObject *obj in array) {
         
         if ([[obj objectForKey:@"username"] isEqualToString:username] && [[obj objectForKey:@"Password"] isEqualToString:password]) {
@@ -60,15 +63,20 @@
           [self.userDefaults setObject:password forKey:@"Password"];
           [self.userDefaults setObject:nickname forKey:@"nickname"];
           
-          //界面跳转；
-          [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
           
+          isSuccessful = true;
           
           break;
         }//if();
       }//for();
       
-      [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的用户名和密码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+      if (isSuccessful) {
+        //界面跳转；
+        [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
+      } else {
+        [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的用户名和密码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+      }
+      
     }else{
       [AllUtils showPromptDialog:@"提示" andMessage:@"网络异常，请稍候再试！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
     }

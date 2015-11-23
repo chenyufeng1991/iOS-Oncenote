@@ -87,11 +87,13 @@
             [AllUtils jumpToViewController:@"LoginViewController" contextViewController:self handler:nil];
           } else {
             [AllUtils showPromptDialog:@"提示" andMessage:@"网络异常，修改密码失败！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
+            NSLog(@"错误信息2：%@",error);
+            
           }
         }];
       }
     }else{
-      //错误处理
+      NSLog(@"错误信息1：%@",error);
     }
     
   }];

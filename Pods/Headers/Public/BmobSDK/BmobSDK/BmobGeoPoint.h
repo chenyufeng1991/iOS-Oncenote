@@ -1,0 +1,1 @@
+../../../../BmobSDK/BmobSDK.framework/Headers/BmobGeoPoint.h

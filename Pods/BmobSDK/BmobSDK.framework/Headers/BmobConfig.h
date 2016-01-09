@@ -92,7 +92,7 @@ typedef void (^BmobAllTableSchemasBlock)(NSArray *tableSchemasArray,NSError *err
 
 UIKIT_STATIC_INLINE NSString* Version()
 {
-	return @"1.6.5";
+	return @"1.6.6";
 }
 
 

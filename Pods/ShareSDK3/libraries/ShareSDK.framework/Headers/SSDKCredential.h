@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, SSDKCredentialType){
 /**
  *  过期时间
  */
-@property (nonatomic,retain) NSDate *expired;
+@property (nonatomic, strong) NSDate *expired;
 
 /**
  *  授权类型
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger, SSDKCredentialType){
 /**
  *  原始数据
  */
-@property (nonatomic, retain) NSDictionary *rawData;
+@property (nonatomic, strong) NSDictionary *rawData;
 
 /**
  *  标识授权是否可用，YES 可用， NO 已过期

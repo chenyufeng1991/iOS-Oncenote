@@ -32,4 +32,5 @@
  *  @param object 移除关系的对象
  */
 -(void)removeObject:(BmobObject *)object;
+
 @end

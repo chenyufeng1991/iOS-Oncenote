@@ -9,10 +9,12 @@
 #ifndef ShareSDK_SSDKTypeDefine_h
 #define ShareSDK_SSDKTypeDefine_h
 
+@protocol ISSDKAuthView;
+
 @class SSDKUser;
 @class SSDKFriendsPaging;
 @class SSDKContentEntity;
-@class SSDKAuthView;
+@class UIView;
 @class SSDKAddFriendView;
 
 /**
@@ -123,6 +125,10 @@ typedef NS_ENUM(NSUInteger, SSDKPlatformType){
      */
     SSDKPlatformTypeSMS                 = 19,
     /**
+     *  打印
+     */
+    SSDKPlatformTypePrint               = 20,
+    /**
      *  拷贝
      */
     SSDKPlatformTypeCopy                = 21,
@@ -138,6 +144,10 @@ typedef NS_ENUM(NSUInteger, SSDKPlatformType){
      *  QQ好友
      */
     SSDKPlatformSubTypeQQFriend         = 24,
+    /**
+     *  Instapaper
+     */
+    SSDKPlatformTypeInstapaper          = 25,
     /**
      *  Pocket
      */
@@ -155,9 +165,33 @@ typedef NS_ENUM(NSUInteger, SSDKPlatformType){
      */
     SSDKPlatformTypeFlickr              = 34,
     /**
+     *  Dropbox
+     */
+    SSDKPlatformTypeDropbox             = 35,
+    /**
+     *  VKontakte
+     */
+    SSDKPlatformTypeVKontakte           = 36,
+    /**
      *  微信收藏
      */
     SSDKPlatformSubTypeWechatFav        = 37,
+    /**
+     *  易信好友
+     */
+    SSDKPlatformSubTypeYiXinSession     = 38,
+    /**
+     *  易信朋友圈
+     */
+    SSDKPlatformSubTypeYiXinTimeline    = 39,
+    /**
+     *  易信收藏
+     */
+    SSDKPlatformSubTypeYiXinFav         = 40,
+    /**
+     *  明道
+     */
+    SSDKPlatformTypeMingDao             = 41,
     /**
      *  Line
      */
@@ -178,6 +212,10 @@ typedef NS_ENUM(NSUInteger, SSDKPlatformType){
      *  支付宝好友
      */
     SSDKPlatformTypeAliPaySocial        = 50,
+    /**
+     *  易信
+     */
+    SSDKPlatformTypeYiXin               = 994,
     /**
      *  KaKao
      */
@@ -306,7 +344,7 @@ typedef void(^SSDKImportHandler) (SSDKPlatformType platformType);
  *
  *  @param view 授权视图
  */
-typedef void(^SSDKAuthorizeViewDisplayHandler) (SSDKAuthView *view);
+typedef void(^SSDKAuthorizeViewDisplayHandler) (UIView<ISSDKAuthView> *view);
 
 /**
  *  添加好友视图显示回调处理器，仅用于Facebook添加好友时触发

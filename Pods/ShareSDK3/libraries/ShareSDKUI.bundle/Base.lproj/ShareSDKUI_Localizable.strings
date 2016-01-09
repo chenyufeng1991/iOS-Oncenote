@@ -37,9 +37,10 @@
 "ShareType_34" = "Flickr";
 "ShareType_35" = "Dropbox";
 "ShareType_36" = "VKontakte";
-"ShareType_37" = "Wechat Favorites";
-"ShareType_38" = "Yixin Contacts";
+"ShareType_37" = "Wechat favorites";
+"ShareType_38" = "Yixin contacts";
 "ShareType_39" = "Yixin moments";
+"ShareType_40" = "Yixin favorites";
 "ShareType_41" = "Mingdao";
 "ShareType_42" = "Line";
 "ShareType_43" = "WhatsApp";
@@ -61,4 +62,6 @@
 "InputTheShareContent" = "Please input the share content";
 "Share" = "Share";
 "AuthorizeFailed" = "Authorize failed";
+"NoValidPlatform" = "There is no valid platform to show.The reason may be that the active platform need app client to share but the iOS device do not have that app client.";
+
 

@@ -40,6 +40,7 @@
 "ShareType_37" = "微信收藏";
 "ShareType_38" = "易信好友";
 "ShareType_39" = "易信朋友圈";
+"ShareType_40" = "易信收藏";
 "ShareType_41" = "明道";
 "ShareType_42" = "Line";
 "ShareType_43" = "WhatsApp";
@@ -61,4 +62,5 @@
 "InputTheShareContent" = "请输入分享内容";
 "Share" = "分享";
 "AuthorizeFailed" = "授权失败";
+"NoValidPlatform" = "没有有效的分享平台可以显示。原因可能是：分享平台需要客户端才能分享，而这台iOS设备没有安装这些平台的客户端。";
 

@@ -164,6 +164,14 @@
 -(void)incrementKey:(NSString *)key;
 
 /**
+ *  列的值加 number
+ *
+ *  @param key    列的值
+ *  @param number 增加的数值，可为任意数值类型
+ */
+- (void)incrementKey:(NSString *)key byNumber:(NSNumber *)number;
+
+/**
  *  列的值加 amount
  *
  *  @param key    列的值
@@ -177,6 +185,14 @@
  *  @param key 列名
  */
 -(void)decrementKey:(NSString *)key;
+
+/**
+ *  列的值送去number
+ *
+ *  @param key    列值
+ *  @param number 送去的数值，可为做任意数值类型
+ */
+- (void)decrementKey:(NSString *)key byNumber:(NSNumber *)number;
 
 /**
  *  列的值减 amount

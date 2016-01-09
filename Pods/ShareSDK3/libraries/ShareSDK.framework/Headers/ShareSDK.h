@@ -42,7 +42,7 @@
  *  分享平台授权
  *
  *  @param platformType       平台类型
- *  @param @param settings    授权设置,目前只接受SSDKAuthSettingKeyScopes属性设置，如：@{SSDKAuthSettingKeyScopes : @[@"all", @"mail"]}
+ *  @param @param settings    授权设置,目前只接受SSDKAuthSettingKeyScopes属性设置，如新浪微博关注官方微博：@{SSDKAuthSettingKeyScopes : @[@"follow_app_official_microblog"]}，类似“follow_app_official_microblog”这些字段是各个社交平台提供的。
  *  @param stateChangeHandler 授权状态变更回调处理
  */
 + (void)authorize:(SSDKPlatformType)platformType

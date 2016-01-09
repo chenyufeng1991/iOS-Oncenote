@@ -21,8 +21,6 @@
   [note setObject:noteTitle forKey:@"noteTitle"];
   [note setObject:noteText forKey:@"noteText"];
   [note saveInBackgroundWithResultBlock:todo];
-  
-  
 }
 
 #pragma mark - 往数据库中删除一条笔记
@@ -58,7 +56,5 @@
 //    }
 //  }];
 //}
-
-
 
 @end

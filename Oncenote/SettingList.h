@@ -10,8 +10,6 @@
 
 @interface SettingList : NSObject
 
-
 @property(nonatomic,strong)NSArray *settingListArray;
-
 
 @end

@@ -15,14 +15,12 @@
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import "AllUtils.h"
 
-
 @interface NoteDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *shareImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *searchImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView;
-
 @property (weak, nonatomic) IBOutlet UITextField *noteTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextTextView;
 
@@ -31,19 +29,14 @@
 @implementation NoteDetailViewController
 
 - (void)viewDidLoad {
+
   [super viewDidLoad];
-  
   self.noteTitleTextField.text = self.noteTitle;
   self.noteTextTextView.text = self.noteText;
   NSLog(@"noteId;%@",self.noteId);
-  
-  
   //控件绑定操作；
   [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteDetailBackButtonPressed:)]];
   [self.shareImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteDetailShareButtonPressed:)]];
-  
-  
-  
 }
 
 
@@ -52,12 +45,11 @@
   
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
   [self updateBmobObject:NOTE_TABLE noteId:self.noteId noteTitle:self.noteTitleTextField.text noteText:self.noteTextTextView.text];
-  
 }
 
 - (void) noteDetailShareButtonPressed:(id)sender{
+
   NSArray* imageArray = @[[UIImage imageNamed:@"shareImg.png"]];
-  
   if (imageArray) {
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
@@ -70,8 +62,8 @@
                              items:nil
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-                 
                  switch (state) {
+
                    case SSDKResponseStateSuccess:
                    {
                      [AllUtils showPromptDialog:@"提示" andMessage:@"分享成功" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
@@ -85,12 +77,9 @@
                    default:
                      break;
                  }
-                 
                }];
-    
   }
 }
-
 
 #pragma mark - 修改笔记
 -(void)updateBmobObject:(NSString*)tableName  noteId:(NSString*)noteId noteTitle:(NSString*)noteTitle noteText:(NSString*)noteText{
@@ -102,7 +91,6 @@
         //设置cheatMode为YES
         [object setObject:noteTitle forKey:@"noteTitle"];
         [object setObject:noteText forKey:@"noteText"];
-        
         //异步更新数据
         [object updateInBackground];
       }
@@ -110,19 +98,13 @@
       //进行错误处理
     }
   }];
-  
-  
-  
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
   MainViewController *mainViewController = [[MainViewController alloc] init];
   mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
   mainViewController.tempIndexPath = self.indexPath;
   mainViewController.tempTitle = self.noteTitleTextField.text;
   mainViewController.tempText = self.noteTextTextView.text;
-  
   [self presentViewController:mainViewController animated:true completion:nil];
-  
-  
 }
 
 @end

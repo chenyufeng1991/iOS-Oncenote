@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
 @property(nonatomic,strong) AppDelegate *globalApp;
 @property(nonatomic,strong) NSUserDefaults *userDefaults;
 
@@ -27,11 +26,10 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+
   [super viewDidLoad];
-  
   self.globalApp = [[UIApplication sharedApplication] delegate];
   self.userDefaults = [NSUserDefaults standardUserDefaults];
-  
 }
 
 #pragma mark - 所有的按钮点击；
@@ -45,7 +43,6 @@
     if (!error) {
       
       BOOL isSuccessful = false;
-      
       for (BmobObject *obj in array) {
         
         if ([[obj objectForKey:@"username"] isEqualToString:username] && [[obj objectForKey:@"Password"] isEqualToString:password]) {
@@ -62,61 +59,41 @@
           [self.userDefaults setObject:username forKey:@"username"];
           [self.userDefaults setObject:password forKey:@"Password"];
           [self.userDefaults setObject:nickname forKey:@"nickname"];
-          
-          
+
           isSuccessful = true;
-          
           break;
         }//if();
       }//for();
-      
       if (isSuccessful) {
+
         //界面跳转；
         [AllUtils jumpToViewController:@"MainViewController" contextViewController:self handler:nil];
       } else {
+
         [AllUtils showPromptDialog:@"提示" andMessage:@"登录失败，请输入正确的用户名和密码！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
       }
-      
     }else{
+
       [AllUtils showPromptDialog:@"提示" andMessage:@"网络异常，请稍候再试！" OKButton:@"确定" OKButtonAction:nil cancelButton:@"" cancelButtonAction:nil contextViewController:self];
     }
-    
   }];
-  
 }
-
 
 - (IBAction)forgetPasswordButtonPressed:(id)sender {
   
   [AllUtils jumpToViewController:@"ForgetPasswordViewController" contextViewController:self handler:nil];
-  
 }
-
-
 
 - (IBAction)createAccountButtonPressed:(id)sender {
   
   [AllUtils jumpToViewController:@"RegisterViewController" contextViewController:self handler:nil];
 }
 
-
-
 #pragma mark - 触摸屏幕隐藏键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
   
   [self.usernameTextField resignFirstResponder];
   [self.passwordTextField resignFirstResponder];
-  
 }
 
 @end
-
-
-
-
-
-
-
-
-
-

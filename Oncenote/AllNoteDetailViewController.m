@@ -23,42 +23,33 @@
 @property (weak, nonatomic) IBOutlet UIImageView *shareImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *searchImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView;
-
 @property (weak, nonatomic) IBOutlet UITextField *noteTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextTextView;
-
 
 @end
 
 @implementation AllNoteDetailViewController
 
 - (void)viewDidLoad {
+
   [super viewDidLoad];
-  
-  
   self.noteTitleTextField.text = self.noteTitle;
   self.noteTextTextView.text = self.noteText;
   NSLog(@"noteId;%@",self.noteId);
-  
-  
   //控件绑定操作；
   [self.backImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allNoteDetailBackButtonPressed:)]];
   [self.shareImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allNoteDetailShareButtonPressed:)]];
-  
 }
-
 
 #pragma mark - 所有的按钮点击操作
 - (void) allNoteDetailBackButtonPressed:(id)sender{
   
   [self updateBmobObject:NOTE_TABLE noteId:self.noteId noteTitle:self.noteTitleTextField.text noteText:self.noteTextTextView.text];
-  
 }
 
 - (void) allNoteDetailShareButtonPressed:(id)sender{
   
   NSArray* imageArray = @[[UIImage imageNamed:@"shareImg.png"]];
-  
   if (imageArray) {
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
@@ -86,12 +77,8 @@
                    default:
                      break;
                  }
-                 
                }];
-    
   }
-  
-  
 }
 
 #pragma mark - 修改笔记
@@ -104,7 +91,6 @@
         //设置cheatMode为YES
         [object setObject:noteTitle forKey:@"noteTitle"];
         [object setObject:noteText forKey:@"noteText"];
-        
         //异步更新数据
         [object updateInBackground];
       }
@@ -112,9 +98,6 @@
       //进行错误处理
     }
   }];
-  
-  
-  
   //使用显式界面跳转,因为需要执行MainViewController的viewDidLoad()方法；
   AllNotesViewController *allNotesViewController = [[AllNotesViewController alloc] init];
   allNotesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AllNotesViewController"];
@@ -123,33 +106,6 @@
   allNotesViewController.tempText = self.noteTextTextView.text;
   
   [self presentViewController:allNotesViewController animated:true completion:nil];
-  
-  
 }
 
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

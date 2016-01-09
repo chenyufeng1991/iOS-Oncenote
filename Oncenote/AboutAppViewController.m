@@ -16,16 +16,13 @@
 @implementation AboutAppViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
-
-  
 }
-
 
 - (IBAction)naviBackButtonPressed:(id)sender {
   
   [AllUtils jumpToViewController:@"SettingViewController" contextViewController:self handler:nil];
 }
-
 
 @end

@@ -15,7 +15,6 @@
 @property(nonatomic,copy) NSString* username;
 @property(nonatomic,copy) NSString* noteTitle;
 @property(nonatomic,copy) NSString* noteText;
-
 //所有应该以更新笔记的
 @property(nonatomic,copy) NSString* noteCreatedAt;//创建笔记的时间；
 

@@ -40,6 +40,7 @@
   }];
 }
 
+
 #pragma mark - 修改用户的昵称
 //+ (void)updateNicknameToUserTable:(NSString*)tableName userId:(NSString*)userId nickname:(NSString*)nickname{
 //

@@ -2,7 +2,7 @@
 &emsp;&emsp;&nbsp;这是一款类似于印象笔记Evernote的生活类iOS应用——朝夕笔记 Oncenote。我希望能为更多的iOS开发者提供帮助与服务。当然App中还有不少bug和可扩展的功能模块，也希望各位开发者为该项目贡献自己的code力量。大家可以通过点击右上角的fork到自己的Github仓库，也可以点击star实时关注项目进度。
 ##1.项目简介
 &emsp;&emsp;&nbsp;该应用基本实现了一款笔记类应用的所有基本功能，如使用手机号进行注册登录以及短信验证；密码昵称以及个人资料的修改；笔记的增删改查等功能和笔记分享功能。其中最重要的是使用了[Bmob移动后端云](http://www.bmob.cn/)作为应用的服务器。对于开发者来说，Bmob可以快速架构应用的服务器后台和数据库，几乎能免去所有服务器端编码工作量。让你的所有个人资料和笔记资料保存在云端，能够随时的对数据进行访问。这可以让你在不同的iOS设备上对自己的笔记进行管理与同步，实现了一款真正可使用的App。</br>
-&emsp;&emsp;&nbsp;注意下：该项目我使用Cocoapods进行第三方包管理的，并且在Xcode7下进行开发。运行程序前需要先安装好Cocoapods，并在在项目根目录下执行pod install,pod update命令，来加载更新第三方包。由于Xcode不同版本原因，也建议升级到Xcode7下调试程序。有多人反映说项目编译不成功或者运行时报错，经本人多次测试，代码是没有问题的。原因可能是Xcode版本不同问题或者Cocoapods更新问题。想要了解如何安装Cocoapods，请参考[《iOS包管理工具Cocoapods的安装与使用》](http://blog.csdn.net/chenyufeng1991/article/details/47432299)这篇博客。如果有任何问题，请及时与我联系。 </br>
+&emsp;&emsp;&nbsp;注意下：该项目我使用Cocoapods进行第三方包管理的，并且在Xcode7下进行开发。运行程序前需要先安装好Cocoapods，并在在项目根目录下执行pod install,pod update命令，来加载更新第三方包。由于Xcode不同版本原因，也建议升级到Xcode7下调试程序。有多人反映说项目编译不成功或者运行时报错，经本人多次测试，代码是没有问题的。原因可能是Xcode版本不同问题或者Cocoapods更新问题。想要了解如何安装Cocoapods，请参考[《iOS包管理工具Cocoapods的安装与使用》](http://blog.csdn.net/chenyufeng1991/article/details/47432299)这篇博客。如果有任何问题，请及时与我联系。还不能进行发布。</br>
 &emsp;&emsp;&nbsp;其中我还留出多个接口可供大家开发其他模块：照片功能、提醒功能和群聊功能等等。之后我还会适配到Apple Watch上。如果你有好的idea，也可以在App里面实现。希望在更多开发者的共同努力下，把这个应用开发成一个优秀的产品。让我们一起来超越印象笔记吧！。系统主界面如下：</br> 
 ![Alt text](https://github.com/chenyufeng1991/iOS-Oncenote/raw/master/Screenshots/1.png)
 ##2.开发指南
